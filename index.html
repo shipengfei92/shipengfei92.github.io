@@ -169,60 +169,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Untitled" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Fashion Style Generation – related to –&gt; artistic style transfer</p>
-<p>Neither existing global nor patch based neural style transfer methods could well solve these challenges.</p>
-<p>Requirement:</p>
-<ul>
-<li>The synthetic image should preserve the similar design as the basic clothing,</li>
-<li>Meanwhile, it should blend the new style pattern on the clothing.</li>
-</ul>
-<p>In this paper, they propose an end-to-end feed-forward neural network which consists of a fashion style generator and a discriminator.</p>
-<p>The global and patch based style and content losses calculated by the discriminator alternatively back-propagate the generator network and optimize it.</p>
-<p>Discriminator –&gt; losses for back-propagation –&gt; Generator</p>
-<ul>
-<li>The global optimization stage the clothing form and design,</li>
-<li>The local optimization stage preserves the de- tailed style pattern.</li>
-</ul>
-<p>Applying artificial intelligence to solve problems in art and fashion fields</p>
-<p>fashion style classification<br><br>clothing parsing<br><br>clothing retrieval<br><br>recommendation<br></p>
-<p>In this paper, they focus on a novel problem: fashion style generation.</p>
-<p>Existing neural style transfer works mainly consist of two kinds of approaches: global and patch.</p>
-<p>Global (i.e., full image) based methods achieve impressive results in artistic style transfer, but with limited fidelity in local detail, especially to high-resolution images.</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/13/Untitled/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
     <article id="post-ANTLR Hands on" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -925,6 +871,105 @@
 
 
   
+    <article id="post-Play-Tricircle-with-virtualbox" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/07/Play-Tricircle-with-virtualbox/">Play Tricircle with virtualbox</a>
+    </h1>
+  
+
+        
+        <a href="/2016/03/07/Play-Tricircle-with-virtualbox/" class="archive-article-date">
+  	<time datetime="2016-03-07T03:54:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Playing-Tricircle-with-Virtualbox"><a href="#Playing-Tricircle-with-Virtualbox" class="headerlink" title="Playing Tricircle with Virtualbox"></a>Playing Tricircle with Virtualbox</h1><h2 id="1-Preparation"><a href="#1-Preparation" class="headerlink" title="1 Preparation"></a>1 Preparation</h2><p>1 server with Linux kernel (demo is Ubuntu 14.04 LTS)</p>
+<h2 id="2-Install-softwares"><a href="#2-Install-softwares" class="headerlink" title="2 Install softwares"></a>2 Install softwares</h2><h3 id="2-1-Install-virtualbox"><a href="#2-1-Install-virtualbox" class="headerlink" title="2.1 Install virtualbox"></a>2.1 Install virtualbox</h3><p>Follow the steps in <a href="https://www.virtualbox.org/wiki/Linux_Downloads" target="_blank" rel="external">virtualbox downloads</a></p>
+<h5 id="First-Add-the-following-line-to-your-etc-apt-sources-list"><a href="#First-Add-the-following-line-to-your-etc-apt-sources-list" class="headerlink" title="First, Add the following line to your /etc/apt/sources.list:"></a>First, Add the following line to your /etc/apt/sources.list:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deb http://download.virtualbox.org/virtualbox/debian trusty contrib</div></pre></td></tr></table></figure>
+<p>According to your distribution, replace ‘vivid’ by ‘utopic’, ‘trusty’, ‘raring’, ‘quantal’, ‘precise’, ‘lucid’, ‘jessie’, ‘wheezy’, or ‘squeeze’.</p>
+<h5 id="Then-add-The-Oracle-public-key-for-apt-secure"><a href="#Then-add-The-Oracle-public-key-for-apt-secure" class="headerlink" title="Then, add The Oracle public key for apt-secure:"></a>Then, add The Oracle public key for apt-secure:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -</div></pre></td></tr></table></figure>
+<h5 id="Next-install-with-apt-get-method"><a href="#Next-install-with-apt-get-method" class="headerlink" title="Next, install with apt-get method:"></a>Next, install with apt-get method:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install virtualbox-5.0</div></pre></td></tr></table></figure>
+<h3 id="2-2-Connect-to-the-virtualbox-with-x11"><a href="#2-2-Connect-to-the-virtualbox-with-x11" class="headerlink" title="2.2 Connect to the virtualbox with x11"></a>2.2 Connect to the virtualbox with x11</h3><h5 id="First-copy-your-public-key-to-the-authorized-keys"><a href="#First-copy-your-public-key-to-the-authorized-keys" class="headerlink" title="First, copy your public key to the ~/authorized_keys"></a>First, copy your public key to the ~/authorized_keys</h5><h5 id="Then-connect-with-X-command"><a href="#Then-connect-with-X-command" class="headerlink" title="Then, connect with -X command"></a>Then, connect with -X command</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -X root@HostIP</div></pre></td></tr></table></figure>
+<h5 id="Next-input-the-virtualbox-to-start-install-virtual-machine"><a href="#Next-input-the-virtualbox-to-start-install-virtual-machine" class="headerlink" title="Next, input the virtualbox to start install virtual machine"></a>Next, input the virtualbox to start install virtual machine</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">virtualbox</div></pre></td></tr></table></figure>
+<p>Then you can see the virtualbox graph interface:</p>
+<p><img src="http://img.blog.csdn.net/20160307194716807" alt="virtualbox"></p>
+<h2 id="3-Install-Virtual-Machines"><a href="#3-Install-Virtual-Machines" class="headerlink" title="3 Install Virtual Machines"></a>3 Install Virtual Machines</h2><p>For playing Tricircle, we need to install 3 nodes for devstack.One for the Top OpenStack, Two for cross pod bottom OpenStacks.</p>
+<h3 id="3-1-Configuration-of-VMs"><a href="#3-1-Configuration-of-VMs" class="headerlink" title="3.1 Configuration of VMs"></a>3.1 Configuration of VMs</h3><h4 id="The-most-important-is-to-set-up-networks-for-use"><a href="#The-most-important-is-to-set-up-networks-for-use" class="headerlink" title="The most important is to set up networks for use"></a>The most important is to set up networks for use</h4><p>In order to make the VMs with multiple VLAN networks, then add 2 network devices for bridge use.</p>
+<h5 id="eth0"><a href="#eth0" class="headerlink" title="eth0"></a>eth0</h5><p>The eth0 is the default network with NAT methods.<br><img src="http://img.blog.csdn.net/20160307194804338" alt="eth0"></p>
+<h5 id="eth1"><a href="#eth1" class="headerlink" title="eth1"></a>eth1</h5><p>The eth1 is the VLAN external network,and using bridge method, in my environment, I attached to the eth1.</p>
+<h5 id="attention-The-Promiscuous-Mode-must-to-set-“Allow-All”-And-be-in-use-after-reboot"><a href="#attention-The-Promiscuous-Mode-must-to-set-“Allow-All”-And-be-in-use-after-reboot" class="headerlink" title="[attention] The Promiscuous Mode must to set “Allow All”.And be in use after reboot."></a>[attention] The Promiscuous Mode must to set “Allow All”.And be in use after reboot.</h5><p>Otherwise, The Ping test with VLAN tag from Node1 to Node2 will be blocked.<br><img src="http://img.blog.csdn.net/20160307194824651" alt="eth1"></p>
+<h5 id="eth2"><a href="#eth2" class="headerlink" title="eth2"></a>eth2</h5><p>The same setting as the above, the Promiscuous Mode must be set to “Allow All”. And  be in use after reboot.</p>
+<p><img src="http://img.blog.csdn.net/20160307194606728" alt="eth2"></p>
+<h3 id="3-2-Installation-the-VMs"><a href="#3-2-Installation-the-VMs" class="headerlink" title="3.2 Installation the VMs"></a>3.2 Installation the VMs</h3><h4 id="Download-a-ios-for-installation"><a href="#Download-a-ios-for-installation" class="headerlink" title="Download a ios for installation"></a>Download a ios for installation</h4><p>There are many mirror sites in the world. I download a ubuntu-14.04-LTS in the <a href="http://mirrors.aliyun.com/" target="_blank" rel="external">Ali-OSM</a>(Alibaba Open Source Mirror Site). Because it’s very fast in China.</p>
+<h4 id="Install-the-Operating-System"><a href="#Install-the-Operating-System" class="headerlink" title="Install the Operating System"></a>Install the Operating System</h4><p>Follow the steps while installing, because it’s easy, so it will be ignored.<br>After installation, you will see the console like this:<br><img src="http://img.blog.csdn.net/20160308123435416" alt="display"></p>
+<h3 id="3-3-Running-in-the-backgroud"><a href="#3-3-Running-in-the-backgroud" class="headerlink" title="3.3 Running in the backgroud"></a>3.3 Running in the backgroud</h3><p>After installation of the VMs, we can login from SSH. So we need to let’s these VMs running in the background.<br>And so when we close the VMs, we need to choose the option:</p>
+<p><img src="http://img.blog.csdn.net/20160308113312422" alt="background"></p>
+<h2 id="4-Playing-tricircle-with-devstack"><a href="#4-Playing-tricircle-with-devstack" class="headerlink" title="4 Playing tricircle with devstack"></a>4 Playing tricircle with devstack</h2><p>The detailed methods can be seen in the <a href="https://github.com/openstack/tricircle" target="_blank" rel="external">OpenStack/Tricircle</a>.</p>
+<h3 id="4-1-In-Top-OpenStack"><a href="#4-1-In-Top-OpenStack" class="headerlink" title="4.1 In Top OpenStack"></a>4.1 In Top OpenStack</h3><h4 id="Configure-the-network"><a href="#Configure-the-network" class="headerlink" title="Configure the network"></a>Configure the network</h4><p>Install the openvswitch for creating bridges.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install openvswitch-switch</div></pre></td></tr></table></figure>
+<h4 id="Create-the-stack-user"><a href="#Create-the-stack-user" class="headerlink" title="Create the stack user"></a>Create the stack user</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">adduser stack</div><div class="line">``` </div><div class="line"></div><div class="line">#### Give the stack user sudo privileges:</div></pre></td></tr></table></figure>
+<p>apt-get install sudo -y<br>echo “stack ALL=(ALL) NOPASSWD: ALL” &gt;&gt; /etc/sudoers<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### Download the devstack</div></pre></td></tr></table></figure></p>
+<p>sudo apt-get install git -y<br>git clone <a href="https://git.openstack.org/openstack-dev/devstack" target="_blank" rel="external">https://git.openstack.org/openstack-dev/devstack</a><br>cd devstack<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#### Configure the local.conf</div><div class="line">Change the local.conf to fit your environment.</div><div class="line">The example is in the Tricircle Project. such as [local.conf.sample](https://github.com/openstack/tricircle/blob/master/devstack/local.conf.sample).</div><div class="line"></div><div class="line">#### Install the devstack with Tricircle project</div></pre></td></tr></table></figure></p>
+<p>./stack.sh<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">After installing the devstack with tricircle, the next step is verifying the installation.</div><div class="line"></div><div class="line">#### Verifying the installation</div><div class="line">Before verifying, It should create the client environment variables to import, such as :</div><div class="line"></div><div class="line">admin-openrc.sh</div></pre></td></tr></table></figure></p>
+<p>export OS_PROJECT_DOMAIN_ID=default<br>export OS_USER_DOMAIN_ID=default<br>export OS_PROJECT_NAME=admin<br>export OS_TENANT_NAME=admin<br>export OS_USERNAME=admin<br>export OS_PASSWORD=password #change password as you set in your own environment<br>export OS_AUTH_URL=<a href="http://127.0.0.1:5000" target="_blank" rel="external">http://127.0.0.1:5000</a><br>export OS_IDENTITY_API_VERSION=3</p>
+<p>#It’s very important to set region name to the top openstack, because tricircle has different API urls.<br>export OS_REGION_NAME=RegionOne<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Modify the verify install scripts as your own environment.</div><div class="line">And run:</div></pre></td></tr></table></figure></p>
+<p>cd tricircle/devstack<br>chmod +x verify_top_install.sh<br>./verify_top_install.sh 2&gt;&amp;1 | tee logs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">It will save the outputs in the logs, you can check if it&apos;s installed correct.</div><div class="line"></div><div class="line">I pasted one copy in my environments as [this](https://docs.google.com/document/d/1NQvRJo5bnnvYMUCLar-rRRm65KHOMmNpZasQlZCBgXs/edit?usp=sharing).</div><div class="line"></div><div class="line">### 4.2 Cross pods OpenStack</div><div class="line"></div><div class="line">#### Installing</div><div class="line"></div><div class="line">First, in the node1 install the tricircle, and then in the node2 install the tricircle.As the above:</div><div class="line"></div><div class="line"></div><div class="line">&lt;li&gt; Modify the networks;&lt;/li&gt;</div><div class="line">&lt;li&gt; Create the stack user;&lt;/li&gt;</div><div class="line">&lt;li&gt; Install git;&lt;/li&gt;</div><div class="line">&lt;li&gt; Download the devstack;&lt;/li&gt;</div><div class="line">&lt;li&gt; Modify the local.conf;&lt;/li&gt;</div><div class="line">&lt;li&gt; Install the devstack with tricircle;&lt;/li&gt;</div><div class="line">&lt;br&gt;</div><div class="line"></div><div class="line">#### Verifying the tricircle</div><div class="line"></div><div class="line">Before verifying, It should create the client environment variables to import, such as :admin-openrc.sh</div></pre></td></tr></table></figure></p>
+<p>export OS_PROJECT_DOMAIN_ID=default<br>export OS_USER_DOMAIN_ID=default<br>export OS_PROJECT_NAME=admin<br>export OS_TENANT_NAME=admin<br>export OS_USERNAME=admin<br>export OS_PASSWORD=password #change password as you set in your own environment<br>export OS_AUTH_URL=<a href="http://127.0.0.1:5000" target="_blank" rel="external">http://127.0.0.1:5000</a><br>export OS_IDENTITY_API_VERSION=3</p>
+<p>#It’s very important to set region name to the top openstack, because tricircle has different API urls.<br>export OS_REGION_NAME=RegionOne<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Modify the verify install scripts as your own environment.</div><div class="line">And run:</div></pre></td></tr></table></figure></p>
+<p>cd tricircle/devstack<br>chmod +x verify_top_install.sh<br>./verify_cross_pod_install.sh 2&gt;&amp;1 | tee logs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">One copy logs like [this](https://docs.google.com/document/d/1srGuk2XY8VIbmhGKEVBVbQ_MW5sUByGBDZcJVVS_2Cg/edit?usp=sharing).</div><div class="line"></div><div class="line">#### Ping test</div><div class="line"></div><div class="line">Using the VNC to login the instances in Node1 and Node2.</div><div class="line">And Ping with each other.</div><div class="line"></div><div class="line">VM1: IP 10.0.1.3/24</div></pre></td></tr></table></figure></p>
+<p>ping -c 4 10.0.2.3<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">![vm1](http://img.blog.csdn.net/20160308143200217)</div><div class="line"></div><div class="line">VM2: IP 10.0.2.3/24</div></pre></td></tr></table></figure></p>
+<p>ping -c 4 10.0.1.3<br>```</p>
+<p><img src="http://img.blog.csdn.net/20160308143217405" alt="vm2"></p>
+<p>So the cross pod networking has been verified.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Cloud Computing</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/03/07/Play-Tricircle-with-virtualbox/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1047,11 +1092,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color1">Cloud Computing</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Cloud Computing</a>
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
