@@ -6,30 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://shipengfei92.github.io">
-  <title>Install Tensorflow from Source Code | Pengfei Shi</title>
+  <title>Tag: hackerrank | Pengfei Shi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Install bazelInstall java jdkRequired Java version:
-
-Java JDK 8 or later (JDK 7 is still supported but deprecated).
-
-In centos we can simply install this by command:1yum install -y java-1.8.0-openjdk">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Install Tensorflow from Source Code">
-<meta property="og:url" content="https://shipengfei92.github.io/2016/08/19/Install-Tensorflow-from-Source-Code/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Pengfei Shi">
+<meta property="og:url" content="https://shipengfei92.github.io/tags/hackerrank/index.html">
 <meta property="og:site_name" content="Pengfei Shi">
-<meta property="og:description" content="Install bazelInstall java jdkRequired Java version:
-
-Java JDK 8 or later (JDK 7 is still supported but deprecated).
-
-In centos we can simply install this by command:1yum install -y java-1.8.0-openjdk">
-<meta property="og:updated_time" content="2017-03-29T05:10:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Install Tensorflow from Source Code">
-<meta name="twitter:description" content="Install bazelInstall java jdkRequired Java version:
-
-Java JDK 8 or later (JDK 7 is still supported but deprecated).
-
-In centos we can simply install this by command:1yum install -y java-1.8.0-openjdk">
+<meta name="twitter:title" content="Pengfei Shi">
   
     <link rel="alternative" href="/atom.xml" title="Pengfei Shi" type="application/atom+xml">
   
@@ -189,213 +173,60 @@ In centos we can simply install this by command:1yum install -y java-1.8.0-openj
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Install-Tensorflow-from-Source-Code" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Install Tensorflow from Source Code
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/01/03/hackerrank-SQL-basic/" class="archive-article-date">
+  	<time datetime="2018-01-02T16:08:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-03</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/03/hackerrank-SQL-basic/">hackerrank: SQL basic</a>
     </h1>
   
 
-        
-        <a href="/2016/08/19/Install-Tensorflow-from-Source-Code/" class="archive-article-date">
-  	<time datetime="2016-08-19T03:55:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Install-bazel"><a href="#Install-bazel" class="headerlink" title="Install bazel"></a>Install bazel</h2><h3 id="Install-java-jdk"><a href="#Install-java-jdk" class="headerlink" title="Install java jdk"></a>Install java jdk</h3><p>Required Java version:</p>
-<ul>
-<li>Java JDK 8 or later (JDK 7 is still supported but deprecated).</li>
-</ul>
-<p>In centos we can simply install this by command:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install -y java-1.8.0-openjdk</div></pre></td></tr></table></figure></p>
-<p>set <code>JAVA_HOME</code> environment variables in <code>.bashrc</code>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/lib/jvm/java-openjdk</div></pre></td></tr></table></figure>
-<h3 id="Download-bazel-source-code"><a href="#Download-bazel-source-code" class="headerlink" title="Download bazel source code"></a>Download bazel source code</h3><p>Download from github and compile:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/bazelbuild/bazel.git</div><div class="line">cd bazel</div><div class="line">./compile.sh</div></pre></td></tr></table></figure>
-<h3 id="Set-bazel-to-PATH"><a href="#Set-bazel-to-PATH" class="headerlink" title="Set bazel to PATH"></a>Set bazel to PATH</h3><p>ADD <code>bazel-bin/src/bazel</code> to <code>.bashrc</code></p>
-<p>In my server as:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export PATH=$PATH:/root/bazel/output</div></pre></td></tr></table></figure>
-<p>Now, we have install the bazel in centos.</p>
-<p>If you use Ubuntu OS, you can install it form apt repository. In this blog, I will not tell the detailed, which you can reference the link:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://bazel.io/docs/install.html#compiling-from-source</div></pre></td></tr></table></figure>
-<h2 id="Install-Tensorflow"><a href="#Install-Tensorflow" class="headerlink" title="Install Tensorflow"></a>Install Tensorflow</h2><h3 id="Download-source-code"><a href="#Download-source-code" class="headerlink" title="Download source code"></a>Download source code</h3><p>Clone the tensorflow from github:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/tensorflow/tensorflow</div></pre></td></tr></table></figure>
-<h3 id="Configure-for-installation"><a href="#Configure-for-installation" class="headerlink" title="Configure for installation"></a>Configure for installation</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd tensorflow/</div><div class="line">./configure</div></pre></td></tr></table></figure>
-<p>Then, it will tell you which environment to set. such as:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">Please specify the location of python. [Default is /usr/local/anaconda2/bin/python]: </div><div class="line">Do you wish to build TensorFlow with Google Cloud Platform support? [y/N] n</div><div class="line">No Google Cloud Platform support will be enabled for TensorFlow</div><div class="line">Found possible Python library paths:</div><div class="line">  /usr/local/anaconda2/lib/python2.7/site-packages</div><div class="line">Please input the desired Python library path to use.  Default is [/usr/local/anaconda2/lib/python2.7/site-packages]</div><div class="line"></div><div class="line">/usr/local/anaconda2/lib/python2.7/site-packages</div><div class="line">Do you wish to build TensorFlow with GPU support? [y/N] y</div><div class="line">GPU support will be enabled for TensorFlow</div><div class="line">Please specify which gcc should be used by nvcc as the host compiler. [Default is /usr/bin/gcc]: </div><div class="line">Please specify the Cuda SDK version you want to use, e.g. 7.0. [Leave empty to use system default]: </div><div class="line">Please specify the location where CUDA  toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: </div><div class="line">Please specify the Cudnn version you want to use. [Leave empty to use system default]: </div><div class="line">Please specify the location where cuDNN  library is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: </div><div class="line">Please specify a list of comma-separated Cuda compute capabilities you want to build with.</div><div class="line">You can find the compute capability of your device at: https://developer.nvidia.com/cuda-gpus.</div><div class="line">Please note that each additional compute capability significantly increases your build time and binary size.</div><div class="line">[Default is: &quot;3.5,5.2&quot;]: </div><div class="line">Setting up Cuda include</div><div class="line">Setting up Cuda lib64</div><div class="line">Setting up Cuda bin</div><div class="line">Setting up Cuda nvvm</div><div class="line">Setting up CUPTI include</div><div class="line">Setting up CUPTI lib64</div><div class="line">Configuration finished</div></pre></td></tr></table></figure>
-<h3 id="Create-the-pip-package-and-install"><a href="#Create-the-pip-package-and-install" class="headerlink" title="Create the pip package and install"></a>Create the pip package and install</h3><p>When building from source, you will still build a pip package and install that.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># To build with GPU support:</div><div class="line">bazel build -c opt --config=cuda //tensorflow/tools/pip_package:build_pip_package</div><div class="line">bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg</div><div class="line">pip install /tmp/tensorflow_pkg/tensorflow-0.10.0rc0-py2-none-any.whl</div></pre></td></tr></table></figure>
-<h3 id="Setting-up-TensorFlow-for-Development"><a href="#Setting-up-TensorFlow-for-Development" class="headerlink" title="Setting up TensorFlow for Development"></a>Setting up TensorFlow for Development</h3><p>If you’re working on TensorFlow itself, it is useful to be able to test your changes in an interactive python shell without having to reinstall TensorFlow.</p>
-<p>To set up TensorFlow such that all files are linked (instead of copied) from the system directories, run the following commands inside the TensorFlow root directory:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">bazel build -c opt //tensorflow/tools/pip_package:build_pip_package</div><div class="line"></div><div class="line"><span class="comment"># To build with GPU support:</span></div><div class="line">bazel build -c opt --config=cuda //tensorflow/tools/pip_package:build_pip_package</div><div class="line"></div><div class="line">mkdir _python_build</div><div class="line"><span class="built_in">cd</span> _python_build</div><div class="line">ln <span class="_">-s</span> ../bazel-bin/tensorflow/tools/pip_package/build_pip_package.runfiles/org_tensorflow/* .</div><div class="line">ln <span class="_">-s</span> ../tensorflow/tools/pip_package/* .</div></pre></td></tr></table></figure>
-<p>Such as change the version from 0.10.0 to 0.11.0 file<code>tensorflow/tools/pip_package/setup.py</code>:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">_VERSION = <span class="string">'0.11.0rc0'</span></div></pre></td></tr></table></figure>
-<p>Then, do the following:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python setup.py develop</div></pre></td></tr></table></figure></p>
-<p>Now, we can build our develop tensorflow:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg</div><div class="line">pip install /tmp/tensorflow_pkg/tensorflow-0.11.0rc0-py2-none-any.whl</div></pre></td></tr></table></figure>
-<h2 id="Verify-the-installation"><a href="#Verify-the-installation" class="headerlink" title="Verify the installation"></a>Verify the installation</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">[root@node-4 site-packages]<span class="comment"># pip show tensorflow</span></div><div class="line"></div><div class="line">Metadata-Version: 2.0</div><div class="line">Name: tensorflow</div><div class="line">Version: 0.11.0rc0</div><div class="line">Summary: TensorFlow helps the tensors flow</div><div class="line">Home-page: http://tensorflow.org/</div><div class="line">Author: Google Inc.</div><div class="line">Author-email: opensource@google.com</div><div class="line">Installer: pip</div><div class="line">License: Apache 2.0</div><div class="line">Location: /usr/<span class="built_in">local</span>/anaconda2/lib/python2.7/site-packages</div><div class="line">Requires: numpy, mock, protobuf, wheel, six</div></pre></td></tr></table></figure>
-<p>We can find the version changed from the <code>0.10.0tc0</code> to <code>0.11.0rc0</code>.</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>official link:<a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/g3doc/get_started/os_setup.md#installing-from-sources" target="_blank" rel="external">this</a>.</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/wechat.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Deep Learning</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">hackerrank</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://shipengfei92.github.io/2016/08/19/Install-Tensorflow-from-Source-Code/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/03/28/Using-HEXO-to-write-blogs/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Using HEXO to write blogs
-        
-      </div>
-    </a>
   
   
-    <a href="/2016/04/25/Play-distributed-Tensorflow-with-GPU-accelerated/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Play distributed Tensorflow with GPU accelerated</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-
-  
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Install-Tensorflow-from-Source-Code" data-title="Install Tensorflow from Source Code" data-url="https://shipengfei92.github.io/2016/08/19/Install-Tensorflow-from-Source-Code/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"shipengfei92"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
+    </div></section>
   
 
-
+    
 
 
           </div>
@@ -418,9 +249,9 @@ In centos we can simply install this by command:1yum install -y java-1.8.0-openj
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",

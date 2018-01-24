@@ -175,6 +175,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-hackerrank-SQL-basic" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/03/hackerrank-SQL-basic/">hackerrank: SQL basic</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/03/hackerrank-SQL-basic/" class="archive-article-date">
+  	<time datetime="2018-01-02T16:08:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Challenge-Name-Weather-Observation-Station-3"><a href="#Challenge-Name-Weather-Observation-Station-3" class="headerlink" title="[Challenge Name: Weather Observation Station 3]"></a>[Challenge Name: Weather Observation Station 3]</h3><p>Query a list of <em>CITY</em> names from <strong>STATION</strong> with even <em>ID</em> numbers only. You may print the results in any order, but must exclude duplicates from your answer.</p>
+<h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> city <span class="keyword">from</span> station <span class="keyword">where</span> (<span class="keyword">id</span> % <span class="number">2</span> = <span class="number">0</span>);</div></pre></td></tr></table></figure>
+<h3 id="Challenge-Name-Weather-Observation-Station-4"><a href="#Challenge-Name-Weather-Observation-Station-4" class="headerlink" title="Challenge Name: Weather Observation Station 4"></a>Challenge Name: Weather Observation Station 4</h3><p>Let $N$ be the number of <em>CITY</em> entries in <strong>STATION</strong>, and let $N’$ be the number of distinct <em>CITY</em> names in <strong>STATION</strong>; query the value of $N - N’$ from <strong>STATION</strong>. In other words, find the difference between the total number of <em>CITY</em> entries in the table and the number of distinct <em>CITY</em> entries in the table.</p>
+<p><img src="https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg" alt="sql"></p>
+<h4 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> (<span class="keyword">count</span>(city) - <span class="keyword">count</span>(<span class="keyword">distinct</span> city)) <span class="keyword">from</span> station;</div></pre></td></tr></table></figure>
+<h3 id="Challenge-Name-Weather-Observation-Station-5"><a href="#Challenge-Name-Weather-Observation-Station-5" class="headerlink" title="[Challenge Name: Weather Observation Station 5]"></a>[Challenge Name: Weather Observation Station 5]</h3><p>Query the two cities in <strong>STATION</strong> with the shortest and longest <em>CITY</em> names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.</p>
+<h4 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> city, <span class="keyword">length</span>(city) <span class="keyword">from</span> station <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">length</span>(city),city <span class="keyword">limit</span> <span class="number">1</span>;</div><div class="line"><span class="keyword">select</span> city, <span class="keyword">length</span>(city) <span class="keyword">from</span> station <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">length</span>(city) <span class="keyword">desc</span>,city <span class="keyword">limit</span> <span class="number">1</span>;</div></pre></td></tr></table></figure>
+<h3 id="Challenge-Name-Weather-Observation-Station-6"><a href="#Challenge-Name-Weather-Observation-Station-6" class="headerlink" title="[Challenge Name: Weather Observation Station 6]"></a>[Challenge Name: Weather Observation Station 6]</h3><p>Query the list of <em>CITY</em> names starting with vowels (i.e., <code>a</code>, <code>e</code>, <code>i</code>, <code>o</code>, or <code>u</code>) from <strong>STATION</strong>. Your result <em>cannot</em> contain duplicates.</p>
+<h4 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution"></a>Solution</h4><p>MYSQL: <code>REGEXP</code> used for regular expression</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> CITY <span class="keyword">FROM</span> STATION <span class="keyword">WHERE</span> CITY REGEXP <span class="string">'^[aeiou]'</span>;</div></pre></td></tr></table></figure>
+<h3 id="Challenge-Name-Weather-Observation-Station-7"><a href="#Challenge-Name-Weather-Observation-Station-7" class="headerlink" title="[Challenge Name: Weather Observation Station 7]"></a>[Challenge Name: Weather Observation Station 7]</h3><p>Query the list of <em>CITY</em> names ending with vowels (a, e, i, o, u) from <strong>STATION</strong>. Your result <em>cannot</em> contain duplicates.</p>
+<h4 id="Solution-4"><a href="#Solution-4" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> CITY <span class="keyword">FROM</span> STATION <span class="keyword">WHERE</span> CITY REGEXP <span class="string">'[aeiou]$'</span></div></pre></td></tr></table></figure>
+<h3 id="Challenge-Name-Weather-Observation-Station-8"><a href="#Challenge-Name-Weather-Observation-Station-8" class="headerlink" title="[Challenge Name: Weather Observation Station 8]"></a>[Challenge Name: Weather Observation Station 8]</h3><p>Query the list of <em>CITY</em> names from <strong>STATION</strong> which have vowels (i.e., <em>a</em>, <em>e</em>, <em>i</em>, <em>o</em>, and <em>u</em>) as both their first <em>and</em> last characters. Your result cannot contain duplicates.</p>
+<h4 id="Solution-5"><a href="#Solution-5" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> CITY <span class="keyword">FROM</span> STATION <span class="keyword">WHERE</span> CITY REGEXP <span class="string">'^[aeiou].*[aeiou]$'</span>;</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">hackerrank</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/03/hackerrank-SQL-basic/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Reading-all-about-high-frequency-trading" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -792,154 +867,6 @@
 
 
   
-    <article id="post-Play-distributed-Tensorflow-with-GPU-accelerated" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/25/Play-distributed-Tensorflow-with-GPU-accelerated/">Play distributed Tensorflow with GPU accelerated</a>
-    </h1>
-  
-
-        
-        <a href="/2016/04/25/Play-distributed-Tensorflow-with-GPU-accelerated/" class="archive-article-date">
-  	<time datetime="2016-04-25T03:55:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>TensorFlow™ is an open source software library for numerical computation using data flow graphs.</p>
-<p>TensorFlow is for everyone. It’s for students, researchers, hobbyists, hackers, engineers, developers, inventors and innovators and is being open sourced under the Apache 2.0 open source license.</p>
-<h3 id="Distributed-version"><a href="#Distributed-version" class="headerlink" title="Distributed version"></a>Distributed version</h3><p>In April 13,2006.Distributed version of Tensorflow was published.</p>
-<p><a href="http://googleresearch.blogspot.com/2016/04/announcing-tensorflow-08-now-with.html" target="_blank" rel="external">Announcing TensorFlow 0.8 – now with distributed computing support!</a></p>
-<p>This blog is also reposted by <a href="https://plus.google.com/u/0/+JeffDean" target="_blank" rel="external">Jeff Dean</a> in G+ who is the Google Senior Fellow in the Systems Infrastructure Group.</p>
-<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>I try the distributed version in 3 virtual machines on OpenStack platform which is a famous open source cloud OS.</p>
-<h3 id="Environment"><a href="#Environment" class="headerlink" title="Environment"></a>Environment</h3><ul>
-<li>1 master node</li>
-<li>2 worker nodes</li>
-<li>Configuration:4GB RAM, 2 VCPU, 40.0GB Disk</li>
-<li>Operating System:ubuntu-14.04-server-cloudimg-amd64</li>
-<li>Python version:2.7</li>
-<li>Tensorflow version:r0.8</li>
-<li>vCPU only.</li>
-</ul>
-<h3 id="Install-pip"><a href="#Install-pip" class="headerlink" title="Install pip"></a>Install pip</h3><ol>
-<li>Download <a href="https://bootstrap.pypa.io/get-pip.py" target="_blank" rel="external">get-pip.py</a> file.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://bootstrap.pypa.io/get-pip.py</div></pre></td></tr></table></figure>
-<ol>
-<li>Install the pip behind a proxy</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python get-pip.py --proxy=&quot;[user:passwd@]proxy.server:port&quot;</div></pre></td></tr></table></figure>
-<ol>
-<li>Upgrading pip</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install -U pip</div></pre></td></tr></table></figure>
-<h3 id="Install-Tensorflow-by-pip"><a href="#Install-Tensorflow-by-pip" class="headerlink" title="Install Tensorflow by pip"></a>Install Tensorflow by pip</h3><ol>
-<li>Ubuntu/Linux 64-bit, GPU enabled. Requires CUDA toolkit 7.5 and CuDNN v4.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo pip install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.8.0-cp27-none-linux_x86_64.whl</div></pre></td></tr></table></figure>
-<ol>
-<li>Ubuntu/Linux 64-bit, CPU only:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo pip install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.8.0-cp27-none-linux_x86_64.whl</div></pre></td></tr></table></figure>
-<h2 id="Demo-of-Distributed-TensorFlow"><a href="#Demo-of-Distributed-TensorFlow" class="headerlink" title="Demo of Distributed TensorFlow"></a>Demo of Distributed TensorFlow</h2><p>Now we have setup the preparation for a demo. This demo is according to the tutorial of Tensorflow.</p>
-<p><a href="https://www.tensorflow.org/versions/r0.8/how_tos/distributed/index.html" target="_blank" rel="external">https://www.tensorflow.org/versions/r0.8/how_tos/distributed/index.html</a></p>
-<h3 id="Describe-of-a-cluster"><a href="#Describe-of-a-cluster" class="headerlink" title="Describe of a cluster"></a>Describe of a cluster</h3><p>A TensorFlow “cluster” is a set of “tasks” that participate in the distributed execution of a TensorFlow graph. Each task is associated with a TensorFlow “server”, which contains a “master” that can be used to create sessions, and a “worker” that executes operations in the graph. A cluster can also be divided into one or more “jobs”, where each job contains one or more tasks.</p>
-<h4 id="Two-important-instrucions"><a href="#Two-important-instrucions" class="headerlink" title="Two important instrucions"></a>Two important instrucions</h4><p>Create a <code>tf.train.ClusterSpec</code> that describes all of the tasks in the cluster. This should be the same for each task.</p>
-<p>Create a <code>tf.train.Server</code>, passing the tf.train.ClusterSpec to the constructor, and identifying the local task with a job name and task index.</p>
-<h4 id="Specific-a-cluster"><a href="#Specific-a-cluster" class="headerlink" title="Specific a cluster"></a>Specific a cluster</h4><p>We define 2 worker node and 1 parameter server node as the following:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cluster = tf.train.ClusterSpec(&#123;&quot;worker&quot;: [&quot;tensorflow-worker0:2222&quot;,</div><div class="line">                                           &quot;tensorflow-worker1:2222&quot;],</div><div class="line">                                &quot;ps&quot;: [&quot;tensorflow-master0:2222&quot;]&#125;)</div></pre></td></tr></table></figure>
-<h4 id="master-node"><a href="#master-node" class="headerlink" title="master node"></a>master node</h4><ol>
-<li>Write <code>ps.py</code> as the following for parameter server:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">cluster = tf.train.ClusterSpec(&#123;&quot;worker&quot;: [&quot;tensorflow-worker0:2222&quot;,</div><div class="line">                                           &quot;tensorflow-worker1:2222&quot;],</div><div class="line">                                &quot;ps&quot;: [&quot;tensorflow-master0:2222&quot;]&#125;)</div><div class="line">server = tf.train.Server(cluster,</div><div class="line">                          job_name=&quot;ps&quot;,</div><div class="line">                          task_index=0)</div><div class="line">server.join()</div></pre></td></tr></table></figure>
-<ol>
-<li>Run the script</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># python ps.py </div><div class="line">I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:206] Initialize HostPortsGrpcChannelCache for job ps -&gt; &#123;localhost:2222&#125;</div><div class="line">I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:206] Initialize HostPortsGrpcChannelCache for job worker -&gt; &#123;tensorflow-worker0:2222, tensorflow-worker1:2222&#125;</div><div class="line">I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:202] Started server with target: grpc://localhost:2222</div></pre></td></tr></table></figure>
-<p>It will listen on the 2222 port of master0 server.</p>
-<h4 id="worker-node"><a href="#worker-node" class="headerlink" title="worker node"></a>worker node</h4><p>In the two worker nodes, do the following steps:</p>
-<ol>
-<li>Write <code>worker0.py</code> as the following:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">cluster = tf.train.ClusterSpec(&#123;&quot;worker&quot;: [&quot;tensorflow-worker0:2222&quot;,</div><div class="line">                                           &quot;tensorflow-worker1:2222&quot;],</div><div class="line">                                &quot;ps&quot;: [&quot;tensorflow-master0:2222&quot;]&#125;)</div><div class="line">server = tf.train.Server(cluster,</div><div class="line">                          job_name=&quot;worker&quot;,</div><div class="line">                          task_index=0)</div><div class="line">server.join()</div></pre></td></tr></table></figure>
-<ol>
-<li>Run the script</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># python worker0.py </div><div class="line">I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:206] Initialize HostPortsGrpcChannelCache for job ps -&gt; &#123;tensorflow-master0:2222&#125;</div><div class="line">I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:206] Initialize HostPortsGrpcChannelCache for job worker -&gt; &#123;localhost:2222, tensorflow-worker1:2222&#125;</div><div class="line">I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:202] Started server with target: grpc://localhost:2222</div></pre></td></tr></table></figure>
-<p>It will listen on the 2222 port of worker0 server.</p>
-<ol>
-<li>Write <code>worker1.py</code> as the following:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">cluster = tf.train.ClusterSpec(&#123;&quot;worker&quot;: [&quot;tensorflow-worker0:2222&quot;,</div><div class="line">                                           &quot;tensorflow-worker1:2222&quot;],</div><div class="line">                                &quot;ps&quot;: [&quot;tensorflow-master0:2222&quot;]&#125;)</div><div class="line">server = tf.train.Server(cluster,</div><div class="line">                          job_name=&quot;worker&quot;,</div><div class="line">                          task_index=1)</div><div class="line">server.join()</div></pre></td></tr></table></figure>
-<ol>
-<li>Run the script</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># python worker1.py </div><div class="line">I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:206] Initialize HostPortsGrpcChannelCache for job ps -&gt; &#123;tensorflow-master0:2222&#125;</div><div class="line">I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:206] Initialize HostPortsGrpcChannelCache for job worker -&gt; &#123;tensorflow-worker0:2222, localhost:2222&#125;</div><div class="line">I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:202] Started server with target: grpc://localhost:2222</div></pre></td></tr></table></figure>
-<p>It will listen on the 2222 port of worker1 server.</p>
-<h3 id="Test-Job-Task"><a href="#Test-Job-Task" class="headerlink" title="Test Job Task"></a>Test Job Task</h3><ol>
-<li>The test job script is the following:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">with tf.device(&quot;/job:ps/task:0&quot;):</div><div class="line">    weights0 = tf.Variable(tf.random_normal(shape=[1024, 512]))</div><div class="line">    bias0 = tf.Variable(tf.zeros(shape=[512]))</div><div class="line"></div><div class="line">with tf.device(&quot;/job:worker/task:1&quot;):</div><div class="line">    inputs = tf.random_normal(shape=[10, 1024])</div><div class="line">    l0 = tf.nn.relu(tf.matmul(inputs, weights0) + bias0)</div><div class="line">    l1 = tf.nn.relu(tf.matmul(l0, tf.transpose(weights0)))</div><div class="line">    loss = tf.nn.l2_loss(l1-inputs)</div><div class="line">    train_op = tf.train.AdamOptimizer().minimize(loss)</div><div class="line"></div><div class="line">with tf.Session(&quot;grpc://tensorflow-master0:2222&quot;) as sess:</div><div class="line">   for _ in range(1000):</div><div class="line">       sess.run(tf.initialize_all_variables())</div><div class="line">       _, l = sess.run([train_op, loss])</div><div class="line">       print l</div></pre></td></tr></table></figure>
-<ul>
-<li>ps node is to generate normal random variables.</li>
-<li>worker node is to training the model.</li>
-</ul>
-<ol>
-<li>Results</li>
-</ol>
-<p>When run the script, it will generate data in <code>device: &quot;/job:ps/task:0&quot;</code> and train the data in <code>device=/job:worker/task:1</code> as the following:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"># python job.py </div><div class="line">name: &quot;Adam&quot;</div><div class="line">op: &quot;NoOp&quot;</div><div class="line">input: &quot;^Adam/update_Variable/ApplyAdam&quot;</div><div class="line">input: &quot;^Adam/update_Variable_1/ApplyAdam&quot;</div><div class="line">input: &quot;^Adam/Assign&quot;</div><div class="line">input: &quot;^Adam/Assign_1&quot;</div><div class="line">device: &quot;/job:ps/task:0&quot;</div><div class="line"> Tensor(&quot;L2Loss:0&quot;, shape=(), dtype=float32, device=/job:worker/task:1)</div><div class="line">name: &quot;Adam&quot;</div><div class="line">op: &quot;NoOp&quot;</div><div class="line">input: &quot;^Adam/update_Variable/ApplyAdam&quot;</div><div class="line">input: &quot;^Adam/update_Variable_1/ApplyAdam&quot;</div><div class="line">input: &quot;^Adam/Assign&quot;</div><div class="line">input: &quot;^Adam/Assign_1&quot;</div><div class="line">device: &quot;/job:ps/task:0&quot;</div><div class="line"> Tensor(&quot;L2Loss:0&quot;, shape=(), dtype=float32, device=/job:worker/task:1)</div><div class="line">name: &quot;Adam&quot;</div><div class="line">op: &quot;NoOp&quot;</div><div class="line">input: &quot;^Adam/update_Variable/ApplyAdam&quot;</div><div class="line">input: &quot;^Adam/update_Variable_1/ApplyAdam&quot;</div><div class="line">input: &quot;^Adam/Assign&quot;</div><div class="line">input: &quot;^Adam/Assign_1&quot;</div><div class="line">device: &quot;/job:ps/task:0&quot;</div><div class="line"> Tensor(&quot;L2Loss:0&quot;, shape=(), dtype=float32, device=/job:worker/task:1)</div><div class="line">name: &quot;Adam&quot;</div><div class="line">op: &quot;NoOp&quot;</div><div class="line">input: &quot;^Adam/update_Variable/ApplyAdam&quot;</div><div class="line">input: &quot;^Adam/update_Variable_1/ApplyAdam&quot;</div><div class="line">input: &quot;^Adam/Assign&quot;</div><div class="line">input: &quot;^Adam/Assign_1&quot;</div><div class="line">device: &quot;/job:ps/task:0&quot;</div><div class="line">...</div></pre></td></tr></table></figure>
-<h2 id="Further-Work"><a href="#Further-Work" class="headerlink" title="Further Work"></a>Further Work</h2><p>This blog is only a try of distributed tensorflow, there are many works need to do. such as how to combined working with GPU, how to benchmark and so on.</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.tensorflow.org" target="_blank" rel="external">https://www.tensorflow.org</a></p>
-<p><a href="https://github.com/tensorflow/tensorflow" target="_blank" rel="external">https://github.com/tensorflow/tensorflow</a></p>
-<p><a href="http://googleresearch.blogspot.com/2016/04/announcing-tensorflow-08-now-with.html" target="_blank" rel="external">http://googleresearch.blogspot.com/2016/04/announcing-tensorflow-08-now-with.html</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Deep Learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/04/25/Play-distributed-Tensorflow-with-GPU-accelerated/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1054,11 +981,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Conformal Geometry</a>
+                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
+                <a href="javascript:void(0)" class="js-tag color4">Conformal Geometry</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1066,7 +993,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-High-frequency Trading</a>
+                <a href="javascript:void(0)" class="js-tag color5">SODA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1074,15 +1001,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SODA</a>
+                <a href="javascript:void(0)" class="js-tag color4">-High-frequency Trading</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Blog</a>
+                <a href="javascript:void(0)" class="js-tag color1">hackerrank</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">hotkeys</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Blog</a>
               </li>
             
             <div class="clearfix"></div>
