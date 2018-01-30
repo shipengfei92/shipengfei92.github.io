@@ -6,19 +6,88 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://shipengfei92.github.io">
-  <title>hackerrank: SQL basic | Pengfei Shi</title>
+  <title>SQL basic tutorial | Pengfei Shi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[Challenge Name: Weather Observation Station 3]Query a list of CITY names from STATION with even ID numbers only. You may print the results in any order, but must exclude duplicates from your answer.">
+  <meta name="description" content="Reference
+W3school
+Mysql official manual
+RUNNOOB
+
+FUNCTIONS
+
+
+Name
+Usage
+
+
+
+
+DISTINCT
+Query unique results
+
+
+REGEXP
+Regular Expressions https://dev.mysql.com/doc/refman/5.7/en/regexp.html
+
+
+RIGHT()
+Ex">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hackerrank: SQL basic">
+<meta property="og:title" content="SQL basic tutorial">
 <meta property="og:url" content="https://shipengfei92.github.io/2018/01/03/hackerrank-SQL-basic/index.html">
 <meta property="og:site_name" content="Pengfei Shi">
-<meta property="og:description" content="[Challenge Name: Weather Observation Station 3]Query a list of CITY names from STATION with even ID numbers only. You may print the results in any order, but must exclude duplicates from your answer.">
+<meta property="og:description" content="Reference
+W3school
+Mysql official manual
+RUNNOOB
+
+FUNCTIONS
+
+
+Name
+Usage
+
+
+
+
+DISTINCT
+Query unique results
+
+
+REGEXP
+Regular Expressions https://dev.mysql.com/doc/refman/5.7/en/regexp.html
+
+
+RIGHT()
+Ex">
 <meta property="og:image" content="https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg">
-<meta property="og:updated_time" content="2018-01-24T14:48:33.000Z">
+<meta property="og:updated_time" content="2018-01-30T05:19:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hackerrank: SQL basic">
-<meta name="twitter:description" content="[Challenge Name: Weather Observation Station 3]Query a list of CITY names from STATION with even ID numbers only. You may print the results in any order, but must exclude duplicates from your answer.">
+<meta name="twitter:title" content="SQL basic tutorial">
+<meta name="twitter:description" content="Reference
+W3school
+Mysql official manual
+RUNNOOB
+
+FUNCTIONS
+
+
+Name
+Usage
+
+
+
+
+DISTINCT
+Query unique results
+
+
+REGEXP
+Regular Expressions https://dev.mysql.com/doc/refman/5.7/en/regexp.html
+
+
+RIGHT()
+Ex">
 <meta name="twitter:image" content="https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Pengfei Shi" type="application/atom+xml">
@@ -186,7 +255,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hackerrank: SQL basic
+      SQL basic tutorial
     </h1>
   
 
@@ -199,7 +268,56 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Challenge-Name-Weather-Observation-Station-3"><a href="#Challenge-Name-Weather-Observation-Station-3" class="headerlink" title="[Challenge Name: Weather Observation Station 3]"></a>[Challenge Name: Weather Observation Station 3]</h3><p>Query a list of <em>CITY</em> names from <strong>STATION</strong> with even <em>ID</em> numbers only. You may print the results in any order, but must exclude duplicates from your answer.</p>
+        <h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ol>
+<li><a href="https://www.w3schools.com/sql/default.asp" target="_blank" rel="external">W3school</a></li>
+<li><a href="https://dev.mysql.com/doc/refman/5.7/en/" target="_blank" rel="external">Mysql official manual</a></li>
+<li><a href="http://www.runoob.com/mysql/mysql-tutorial.html" target="_blank" rel="external">RUNNOOB</a></li>
+</ol>
+<h3 id="FUNCTIONS"><a href="#FUNCTIONS" class="headerlink" title="FUNCTIONS"></a>FUNCTIONS</h3><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DISTINCT</td>
+<td>Query unique results</td>
+</tr>
+<tr>
+<td>REGEXP</td>
+<td>Regular Expressions <a href="https://dev.mysql.com/doc/refman/5.7/en/regexp.html" target="_blank" rel="external">https://dev.mysql.com/doc/refman/5.7/en/regexp.html</a></td>
+</tr>
+<tr>
+<td>RIGHT()</td>
+<td>Extract a substring from a string (starting from right)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="REGEXP"><a href="#REGEXP" class="headerlink" title="REGEXP"></a>REGEXP</h4><table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>^</td>
+<td>Match the beginning of a string. i.e. ^[aeiou]</td>
+</tr>
+<tr>
+<td>$</td>
+<td>Match the end of a string. i.e. [aeiou]$</td>
+</tr>
+<tr>
+<td>[a-dX], [^a-dX]</td>
+<td>Matches any character that is (or is not, if ^ is used) either a, b, c, d or X.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Challenge-Name-Weather-Observation-Station-3"><a href="#Challenge-Name-Weather-Observation-Station-3" class="headerlink" title="[Challenge Name: Weather Observation Station 3]"></a>[Challenge Name: Weather Observation Station 3]</h3><p>Query a list of <em>CITY</em> names from <strong>STATION</strong> with even <em>ID</em> numbers only. You may print the results in any order, but must exclude duplicates from your answer.</p>
 <h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> city <span class="keyword">from</span> station <span class="keyword">where</span> (<span class="keyword">id</span> % <span class="number">2</span> = <span class="number">0</span>);</div></pre></td></tr></table></figure>
 <h3 id="Challenge-Name-Weather-Observation-Station-4"><a href="#Challenge-Name-Weather-Observation-Station-4" class="headerlink" title="Challenge Name: Weather Observation Station 4"></a>Challenge Name: Weather Observation Station 4</h3><p>Let $N$ be the number of <em>CITY</em> entries in <strong>STATION</strong>, and let $N’$ be the number of distinct <em>CITY</em> names in <strong>STATION</strong>; query the value of $N - N’$ from <strong>STATION</strong>. In other words, find the difference between the total number of <em>CITY</em> entries in the table and the number of distinct <em>CITY</em> entries in the table.</p>
 <p><img src="https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg" alt="sql"></p>
@@ -213,6 +331,15 @@
 <h4 id="Solution-4"><a href="#Solution-4" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> CITY <span class="keyword">FROM</span> STATION <span class="keyword">WHERE</span> CITY REGEXP <span class="string">'[aeiou]$'</span></div></pre></td></tr></table></figure>
 <h3 id="Challenge-Name-Weather-Observation-Station-8"><a href="#Challenge-Name-Weather-Observation-Station-8" class="headerlink" title="[Challenge Name: Weather Observation Station 8]"></a>[Challenge Name: Weather Observation Station 8]</h3><p>Query the list of <em>CITY</em> names from <strong>STATION</strong> which have vowels (i.e., <em>a</em>, <em>e</em>, <em>i</em>, <em>o</em>, and <em>u</em>) as both their first <em>and</em> last characters. Your result cannot contain duplicates.</p>
 <h4 id="Solution-5"><a href="#Solution-5" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> CITY <span class="keyword">FROM</span> STATION <span class="keyword">WHERE</span> CITY REGEXP <span class="string">'^[aeiou].*[aeiou]$'</span>;</div></pre></td></tr></table></figure>
+<h3 id="Challenge-Name-Weather-Observation-Station-9"><a href="#Challenge-Name-Weather-Observation-Station-9" class="headerlink" title="Challenge Name: Weather Observation Station 9"></a><a href="/challenges/weather-observation-station-9">Challenge Name: Weather Observation Station 9</a></h3><p>Query the list of <em>CITY</em> names from <strong>STATION</strong> that <em>do not start</em> with vowels. Your result cannot contain duplicates.</p>
+<h4 id="Solution-6"><a href="#Solution-6" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> CITY <span class="keyword">FROM</span> STATION <span class="keyword">WHERE</span> CITY <span class="keyword">NOT</span> REGEXP <span class="string">'^[aeiou]'</span>;</div></pre></td></tr></table></figure>
+<h3 id="Challenge-Name-Weather-Observation-Station-11"><a href="#Challenge-Name-Weather-Observation-Station-11" class="headerlink" title="Challenge Name: Weather Observation Station 11"></a><a href="/challenges/weather-observation-station-11">Challenge Name: Weather Observation Station 11</a></h3><p>Query the list of <em>CITY</em> names from <strong>STATION</strong> that either do not start with vowels or do not end with vowels. Your result cannot contain duplicates. </p>
+<h4 id="Solution-7"><a href="#Solution-7" class="headerlink" title="Solution"></a>Solution</h4><p>either do not start with vowels or do not end with vowels == not start with vowels and end with vowels.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> CITY <span class="keyword">FROM</span> STATION <span class="keyword">WHERE</span> CITY <span class="keyword">NOT</span> REGEXP <span class="string">'^[aeiou].*[aeiou]$'</span>;</div></pre></td></tr></table></figure>
+<h3 id="Challenge-Name-Weather-Observation-Station-12"><a href="#Challenge-Name-Weather-Observation-Station-12" class="headerlink" title="Challenge Name: Weather Observation Station 12"></a><a href="/challenges/weather-observation-station-12">Challenge Name: Weather Observation Station 12</a></h3><p>Query the list of <em>CITY</em> names from <strong>STATION</strong> that <em>do not start</em> with vowels and <em>do not end</em> with vowels. Your result cannot contain duplicates.</p>
+<h4 id="Solution-8"><a href="#Solution-8" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> CITY <span class="keyword">FROM</span> STATION <span class="keyword">WHERE</span> CITY REGEXP <span class="string">'^[^aeiou].*[^aeiou]$'</span>;</div></pre></td></tr></table></figure>
+<h3 id="Challenge-Name-Higher-Than-75-Marks"><a href="#Challenge-Name-Higher-Than-75-Marks" class="headerlink" title="Challenge Name: Higher Than 75 Marks"></a><a href="/challenges/more-than-75-marks">Challenge Name: Higher Than 75 Marks</a></h3><p>Query the <em>Name</em> of any student in <strong>STUDENTS</strong> who scored higher than $75$ <em>Marks</em>. Order your output by the <em>last three characters</em> of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending <em>ID</em>.</p>
+<h4 id="Solution-9"><a href="#Solution-9" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">NAME</span> <span class="keyword">FROM</span> STUDENTS <span class="keyword">WHERE</span> MARKS &gt; <span class="number">75</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">RIGHT</span>(<span class="keyword">NAME</span>,<span class="number">3</span>), <span class="keyword">ID</span> <span class="keyword">ASC</span>;</div></pre></td></tr></table></figure>
 
       
 
@@ -322,6 +449,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/01/25/Glossary-of-HFT/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Notes for &quot;All about high-frequency trading&quot;
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/01/02/Reading-all-about-high-frequency-trading/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Reading: all about high-frequency trading </div>
@@ -338,7 +474,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hackerrank-SQL-basic" data-title="hackerrank: SQL basic" data-url="https://shipengfei92.github.io/2018/01/03/hackerrank-SQL-basic/"></div>
+	<div class="ds-thread" data-thread-key="hackerrank-SQL-basic" data-title="SQL basic tutorial" data-url="https://shipengfei92.github.io/2018/01/03/hackerrank-SQL-basic/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -467,11 +603,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HFT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Conformal Geometry</a>
+                <a href="javascript:void(0)" class="js-tag color4">-High-frequency Trading</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -479,15 +619,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SODA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Cloud Computing</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-High-frequency Trading</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -496,6 +628,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">hotkeys</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SODA</a>
               </li>
              
               <li class="article-tag-list-item">
