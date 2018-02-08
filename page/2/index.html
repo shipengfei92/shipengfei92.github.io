@@ -175,6 +175,100 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Install-Tensorflow-from-Source-Code" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/19/Install-Tensorflow-from-Source-Code/">Install Tensorflow from Source Code</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/19/Install-Tensorflow-from-Source-Code/" class="archive-article-date">
+  	<time datetime="2016-08-19T03:55:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Install-bazel"><a href="#Install-bazel" class="headerlink" title="Install bazel"></a>Install bazel</h2><h3 id="Install-java-jdk"><a href="#Install-java-jdk" class="headerlink" title="Install java jdk"></a>Install java jdk</h3><p>Required Java version:</p>
+<ul>
+<li>Java JDK 8 or later (JDK 7 is still supported but deprecated).</li>
+</ul>
+<p>In centos we can simply install this by command:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install -y java-1.8.0-openjdk</div></pre></td></tr></table></figure></p>
+<p>set <code>JAVA_HOME</code> environment variables in <code>.bashrc</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/lib/jvm/java-openjdk</div></pre></td></tr></table></figure>
+<h3 id="Download-bazel-source-code"><a href="#Download-bazel-source-code" class="headerlink" title="Download bazel source code"></a>Download bazel source code</h3><p>Download from github and compile:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/bazelbuild/bazel.git</div><div class="line">cd bazel</div><div class="line">./compile.sh</div></pre></td></tr></table></figure>
+<h3 id="Set-bazel-to-PATH"><a href="#Set-bazel-to-PATH" class="headerlink" title="Set bazel to PATH"></a>Set bazel to PATH</h3><p>ADD <code>bazel-bin/src/bazel</code> to <code>.bashrc</code></p>
+<p>In my server as:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export PATH=$PATH:/root/bazel/output</div></pre></td></tr></table></figure>
+<p>Now, we have install the bazel in centos.</p>
+<p>If you use Ubuntu OS, you can install it form apt repository. In this blog, I will not tell the detailed, which you can reference the link:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://bazel.io/docs/install.html#compiling-from-source</div></pre></td></tr></table></figure>
+<h2 id="Install-Tensorflow"><a href="#Install-Tensorflow" class="headerlink" title="Install Tensorflow"></a>Install Tensorflow</h2><h3 id="Download-source-code"><a href="#Download-source-code" class="headerlink" title="Download source code"></a>Download source code</h3><p>Clone the tensorflow from github:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/tensorflow/tensorflow</div></pre></td></tr></table></figure>
+<h3 id="Configure-for-installation"><a href="#Configure-for-installation" class="headerlink" title="Configure for installation"></a>Configure for installation</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd tensorflow/</div><div class="line">./configure</div></pre></td></tr></table></figure>
+<p>Then, it will tell you which environment to set. such as:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">Please specify the location of python. [Default is /usr/local/anaconda2/bin/python]: </div><div class="line">Do you wish to build TensorFlow with Google Cloud Platform support? [y/N] n</div><div class="line">No Google Cloud Platform support will be enabled for TensorFlow</div><div class="line">Found possible Python library paths:</div><div class="line">  /usr/local/anaconda2/lib/python2.7/site-packages</div><div class="line">Please input the desired Python library path to use.  Default is [/usr/local/anaconda2/lib/python2.7/site-packages]</div><div class="line"></div><div class="line">/usr/local/anaconda2/lib/python2.7/site-packages</div><div class="line">Do you wish to build TensorFlow with GPU support? [y/N] y</div><div class="line">GPU support will be enabled for TensorFlow</div><div class="line">Please specify which gcc should be used by nvcc as the host compiler. [Default is /usr/bin/gcc]: </div><div class="line">Please specify the Cuda SDK version you want to use, e.g. 7.0. [Leave empty to use system default]: </div><div class="line">Please specify the location where CUDA  toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: </div><div class="line">Please specify the Cudnn version you want to use. [Leave empty to use system default]: </div><div class="line">Please specify the location where cuDNN  library is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: </div><div class="line">Please specify a list of comma-separated Cuda compute capabilities you want to build with.</div><div class="line">You can find the compute capability of your device at: https://developer.nvidia.com/cuda-gpus.</div><div class="line">Please note that each additional compute capability significantly increases your build time and binary size.</div><div class="line">[Default is: &quot;3.5,5.2&quot;]: </div><div class="line">Setting up Cuda include</div><div class="line">Setting up Cuda lib64</div><div class="line">Setting up Cuda bin</div><div class="line">Setting up Cuda nvvm</div><div class="line">Setting up CUPTI include</div><div class="line">Setting up CUPTI lib64</div><div class="line">Configuration finished</div></pre></td></tr></table></figure>
+<h3 id="Create-the-pip-package-and-install"><a href="#Create-the-pip-package-and-install" class="headerlink" title="Create the pip package and install"></a>Create the pip package and install</h3><p>When building from source, you will still build a pip package and install that.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># To build with GPU support:</div><div class="line">bazel build -c opt --config=cuda //tensorflow/tools/pip_package:build_pip_package</div><div class="line">bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg</div><div class="line">pip install /tmp/tensorflow_pkg/tensorflow-0.10.0rc0-py2-none-any.whl</div></pre></td></tr></table></figure>
+<h3 id="Setting-up-TensorFlow-for-Development"><a href="#Setting-up-TensorFlow-for-Development" class="headerlink" title="Setting up TensorFlow for Development"></a>Setting up TensorFlow for Development</h3><p>If you’re working on TensorFlow itself, it is useful to be able to test your changes in an interactive python shell without having to reinstall TensorFlow.</p>
+<p>To set up TensorFlow such that all files are linked (instead of copied) from the system directories, run the following commands inside the TensorFlow root directory:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">bazel build -c opt //tensorflow/tools/pip_package:build_pip_package</div><div class="line"></div><div class="line"><span class="comment"># To build with GPU support:</span></div><div class="line">bazel build -c opt --config=cuda //tensorflow/tools/pip_package:build_pip_package</div><div class="line"></div><div class="line">mkdir _python_build</div><div class="line"><span class="built_in">cd</span> _python_build</div><div class="line">ln <span class="_">-s</span> ../bazel-bin/tensorflow/tools/pip_package/build_pip_package.runfiles/org_tensorflow/* .</div><div class="line">ln <span class="_">-s</span> ../tensorflow/tools/pip_package/* .</div></pre></td></tr></table></figure>
+<p>Such as change the version from 0.10.0 to 0.11.0 file<code>tensorflow/tools/pip_package/setup.py</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">_VERSION = <span class="string">'0.11.0rc0'</span></div></pre></td></tr></table></figure>
+<p>Then, do the following:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python setup.py develop</div></pre></td></tr></table></figure></p>
+<p>Now, we can build our develop tensorflow:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg</div><div class="line">pip install /tmp/tensorflow_pkg/tensorflow-0.11.0rc0-py2-none-any.whl</div></pre></td></tr></table></figure>
+<h2 id="Verify-the-installation"><a href="#Verify-the-installation" class="headerlink" title="Verify the installation"></a>Verify the installation</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">[root@node-4 site-packages]<span class="comment"># pip show tensorflow</span></div><div class="line"></div><div class="line">Metadata-Version: 2.0</div><div class="line">Name: tensorflow</div><div class="line">Version: 0.11.0rc0</div><div class="line">Summary: TensorFlow helps the tensors flow</div><div class="line">Home-page: http://tensorflow.org/</div><div class="line">Author: Google Inc.</div><div class="line">Author-email: opensource@google.com</div><div class="line">Installer: pip</div><div class="line">License: Apache 2.0</div><div class="line">Location: /usr/<span class="built_in">local</span>/anaconda2/lib/python2.7/site-packages</div><div class="line">Requires: numpy, mock, protobuf, wheel, six</div></pre></td></tr></table></figure>
+<p>We can find the version changed from the <code>0.10.0tc0</code> to <code>0.11.0rc0</code>.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>official link:<a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/g3doc/get_started/os_setup.md#installing-from-sources" target="_blank" rel="external">this</a>.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Deep Learning</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/19/Install-Tensorflow-from-Source-Code/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Play-distributed-Tensorflow-with-GPU-accelerated" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -643,10 +737,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">HFT</a>
               </li>
              
@@ -655,11 +745,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Cloud Computing</a>
+                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-High-frequency Trading</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Cloud Computing</a>
               </li>
              
               <li class="article-tag-list-item">

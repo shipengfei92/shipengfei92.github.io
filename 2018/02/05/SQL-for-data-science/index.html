@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://shipengfei92.github.io">
-  <title>Archives: 2016/8 | Pengfei Shi</title>
+  <title>SQL for data science | Pengfei Shi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Pengfei Shi">
-<meta property="og:url" content="https://shipengfei92.github.io/archives/2016/08/index.html">
+  <meta name="description" content="Chapter 1： Getting Started and Selecting &amp;amp; Retrieving Data with SQLIntroductionWhat is SQL?Structured Query Language (SQL) is a standard computer language for relational database management and da">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL for data science">
+<meta property="og:url" content="https://shipengfei92.github.io/2018/02/05/SQL-for-data-science/index.html">
 <meta property="og:site_name" content="Pengfei Shi">
+<meta property="og:description" content="Chapter 1： Getting Started and Selecting &amp;amp; Retrieving Data with SQLIntroductionWhat is SQL?Structured Query Language (SQL) is a standard computer language for relational database management and da">
+<meta property="og:image" content="https://shipengfei92.github.io/figures/er-diagram.png">
+<meta property="og:image" content="https://shipengfei92.github.io/figures/er-notation.png">
+<meta property="og:updated_time" content="2018-02-08T07:56:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pengfei Shi">
+<meta name="twitter:title" content="SQL for data science">
+<meta name="twitter:description" content="Chapter 1： Getting Started and Selecting &amp;amp; Retrieving Data with SQLIntroductionWhat is SQL?Structured Query Language (SQL) is a standard computer language for relational database management and da">
+<meta name="twitter:image" content="https://shipengfei92.github.io/figures/er-diagram.png">
   
     <link rel="alternative" href="/atom.xml" title="Pengfei Shi" type="application/atom+xml">
   
@@ -173,60 +180,361 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-SQL-for-data-science" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/08/19/Install-Tensorflow-from-Source-Code/" class="archive-article-date">
-  	<time datetime="2016-08-19T03:55:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/19/Install-Tensorflow-from-Source-Code/">Install Tensorflow from Source Code</a>
+    <h1 class="article-title" itemprop="name">
+      SQL for data science
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Deep Learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        <a href="/2018/02/05/SQL-for-data-science/" class="archive-article-date">
+  	<time datetime="2018-02-05T06:06:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Chapter-1：-Getting-Started-and-Selecting-amp-Retrieving-Data-with-SQL"><a href="#Chapter-1：-Getting-Started-and-Selecting-amp-Retrieving-Data-with-SQL" class="headerlink" title="Chapter 1： Getting Started and Selecting &amp; Retrieving Data with SQL"></a>Chapter 1： Getting Started and Selecting &amp; Retrieving Data with SQL</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><h3 id="What-is-SQL"><a href="#What-is-SQL" class="headerlink" title="What is SQL?"></a>What is SQL?</h3><p>Structured Query Language (SQL) is a standard computer language for relational database management and data manipulation.</p>
+<p>Used to <strong>query, insert, update</strong> and <strong>modify</strong> data.</p>
+<p>Pronounced as “sequel” or S-Q-L.</p>
+<p>Used to communicate with databases;</p>
+<p>SQL is non-procedural language:</p>
+<ul>
+<li><p>Cannot write complete applications</p>
+</li>
+<li><p>Simple, but powerful</p>
+</li>
+</ul>
+<h3 id="How-is-SQL-used"><a href="#How-is-SQL-used" class="headerlink" title="How is SQL used?"></a>How is SQL used?</h3><p>Read/retrieve data</p>
+<p>Write data - add data to a table;</p>
+<p>Update data - insert new data;</p>
+<h3 id="Who-uses-SQL"><a href="#Who-uses-SQL" class="headerlink" title="Who uses SQL?"></a>Who uses SQL?</h3><ul>
+<li>Backend Developer</li>
+<li>Data Architect</li>
+<li>QA Engineer</li>
+<li>ETL Developer</li>
+<li>Database Admin (DBA)</li>
+<li>Data analyst</li>
+<li>System Admin</li>
+<li>System Engineer</li>
+<li>Data Scientist</li>
+</ul>
+<h3 id="DBA-or-Data-Scientist"><a href="#DBA-or-Data-Scientist" class="headerlink" title="DBA or Data Scientist"></a>DBA or Data Scientist</h3><table>
+<thead>
+<tr>
+<th>DBA</th>
+<th>Data Scientist</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manages/governs entire database</td>
+<td>End user of a database</td>
+</tr>
+<tr>
+<td>Gives permissions to users</td>
+<td>Use SQL to query and retrieve data</td>
+</tr>
+<tr>
+<td>Determines access to data</td>
+<td></td>
+</tr>
+<tr>
+<td>Manages and creates tables</td>
+<td></td>
+</tr>
+<tr>
+<td>Uses SQL to query and retrieve data</td>
+</tr>
+</tbody>
+</table>
+<h4 id="How-do-data-scientists-use-SQL"><a href="#How-do-data-scientists-use-SQL" class="headerlink" title="How do data scientists use SQL?"></a>How do data scientists use SQL?</h4><p>Retrieve data;</p>
+<p>May create their own table or test enviroments;</p>
+<p>Combine multiple sources together;</p>
+<p>Write complex queries for analysis.</p>
+<h3 id="Relational-Database-Management-Systems"><a href="#Relational-Database-Management-Systems" class="headerlink" title="Relational Database Management Systems"></a>Relational Database Management Systems</h3><ul>
+<li>SQL Server</li>
+<li>IBM DB2 Oracle</li>
+<li>Sybase ASE</li>
+<li>PostgreSQL</li>
+<li>MySQL</li>
+<li>Microsoft SQL Server</li>
+<li>Apache Open Office Base</li>
+<li>SQLite</li>
+</ul>
+<p>Write syntax depends on what DBMS you are using.</p>
+<p>Each DBMS has its own <strong>dialect</strong>.</p>
+<p>SQL can translate.</p>
+<p>Tweak based on the <strong>dialect</strong> your DBMS speaks.</p>
+<h2 id="Data-Models"><a href="#Data-Models" class="headerlink" title="Data Models"></a>Data Models</h2><h3 id="Thinking-about-your-data"><a href="#Thinking-about-your-data" class="headerlink" title="Thinking about your data"></a>Thinking about your data</h3><p>Understand the business process or subject matter the data is modeled after</p>
+<p>Know the bussiness rules</p>
+<p>Understand how your data is organized and structured in the table(modeled).</p>
+<h3 id="Why-this-is-worthwhile"><a href="#Why-this-is-worthwhile" class="headerlink" title="Why this is worthwhile"></a>Why this is worthwhile</h3><p>Get more accurate results,</p>
+<p>Speed up your work,</p>
+<p>Have less rework.</p>
+<h3 id="Some-concepts"><a href="#Some-concepts" class="headerlink" title="Some concepts"></a>Some concepts</h3><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Database</td>
+<td>A container to store organized data</td>
+</tr>
+<tr>
+<td>Tables</td>
+<td>A structured list of data or a specific type</td>
+</tr>
+<tr>
+<td>Column</td>
+<td>A single field in a table</td>
+</tr>
+<tr>
+<td>Row</td>
+<td>A record in a table</td>
+</tr>
+</tbody>
+</table>
+<h3 id="What-is-data-modeling"><a href="#What-is-data-modeling" class="headerlink" title="What is data modeling?"></a>What is data modeling?</h3><p>Organizes and structures information into multiple, related tables.</p>
+<p>Can represent a bussiness process or show relationships between bussiness processes.</p>
+<p>Should closely represent real world.</p>
+<h3 id="Types-of-data-modeling"><a href="#Types-of-data-modeling" class="headerlink" title="Types of data modeling"></a>Types of data modeling</h3><p>Models for prediction built by data scientist.</p>
+<p>Data model as data tables represented and organized in a database.</p>
+<h3 id="Evolution-of-data-models"><a href="#Evolution-of-data-models" class="headerlink" title="Evolution of data models"></a>Evolution of data models</h3><table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1960</td>
+<td>Hierarchical</td>
+</tr>
+<tr>
+<td>1969</td>
+<td>Network</td>
+</tr>
+<tr>
+<td>1970</td>
+<td>Relational</td>
+</tr>
+<tr>
+<td>1976</td>
+<td>Entity relationship</td>
+</tr>
+<tr>
+<td>1978</td>
+<td>Semantic</td>
+</tr>
+<tr>
+<td>1985</td>
+<td>Object-oriented</td>
+</tr>
+<tr>
+<td>1990</td>
+<td>Extended relational(O/R DBMS)</td>
+</tr>
+<tr>
+<td>2009</td>
+<td>NoSQL - Not only SQL</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Relational-vs-Transactional-Models"><a href="#Relational-vs-Transactional-Models" class="headerlink" title="Relational vs. Transactional Models"></a>Relational vs. Transactional Models</h2><table>
+<thead>
+<tr>
+<th>Relational Model</th>
+<th>Transactional Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allows for easy querying and data manipulation in an easy, logical and intuitive way.</td>
+<td>Operational database - insurance claims within a healthcare database</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Data-model-building-blocks"><a href="#Data-model-building-blocks" class="headerlink" title="Data model building blocks"></a>Data model building blocks</h3><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entity</td>
+<td>Person, place thing or event, Distinguishable, unique and distinct</td>
+</tr>
+<tr>
+<td>Attribute</td>
+<td>A characteristic of an entity</td>
+</tr>
+<tr>
+<td>Relationship</td>
+<td>Describes association among entities.<br> One-to-many,Many-to-many,One-to-one</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>One-to-many: customer to invoices.</li>
+<li>Many-to-many: student to classes.</li>
+<li>One-to-one: manager to store.</li>
+</ul>
+<h2 id="ER-Diagrams"><a href="#ER-Diagrams" class="headerlink" title="ER Diagrams"></a>ER Diagrams</h2><p>ER Model</p>
+<p><img src="figures/er-diagram.png" alt="ER Diagram"></p>
+<ul>
+<li>Show relationships</li>
+<li>Bussiness process</li>
+<li>Represented visually</li>
+<li>Show links (Primary keys)</li>
+</ul>
+<p><img src="figures/er-notation.png" alt="ER Diagram"></p>
 
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://shipengfei92.github.io/2018/02/05/SQL-for-data-science/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/01/25/Notes-for-HFT/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Notes for &quot;All about high-frequency trading&quot;</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="SQL-for-data-science" data-title="SQL for data science" data-url="https://shipengfei92.github.io/2018/02/05/SQL-for-data-science/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"shipengfei92"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-    
+
 
 
           </div>
@@ -249,8 +557,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
