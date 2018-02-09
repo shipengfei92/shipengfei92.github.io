@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://shipengfei92.github.io">
   <title>SQL for data science | Pengfei Shi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Chapter 1： Getting Started and Selecting &amp;amp; Retrieving Data with SQLIntroductionWhat is SQL?Structured Query Language (SQL) is a standard computer language for relational database management and da">
+  <meta name="description" content="Week 1： Getting Started and Selecting &amp;amp; Retrieving Data with SQLIntroductionWhat is SQL?Structured Query Language (SQL) is a standard computer language for relational database management and data">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL for data science">
 <meta property="og:url" content="https://shipengfei92.github.io/2018/02/05/SQL-for-data-science/index.html">
 <meta property="og:site_name" content="Pengfei Shi">
-<meta property="og:description" content="Chapter 1： Getting Started and Selecting &amp;amp; Retrieving Data with SQLIntroductionWhat is SQL?Structured Query Language (SQL) is a standard computer language for relational database management and da">
-<meta property="og:image" content="https://shipengfei92.github.io/figures/er-diagram.png">
-<meta property="og:image" content="https://shipengfei92.github.io/figures/er-notation.png">
-<meta property="og:updated_time" content="2018-02-08T07:56:44.000Z">
+<meta property="og:description" content="Week 1： Getting Started and Selecting &amp;amp; Retrieving Data with SQLIntroductionWhat is SQL?Structured Query Language (SQL) is a standard computer language for relational database management and data">
+<meta property="og:image" content="https://shipengfei92.github.io/../assets/img/er-diagram.png">
+<meta property="og:image" content="https://shipengfei92.github.io/../assets/img/er-notation.png">
+<meta property="og:updated_time" content="2018-02-09T14:02:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL for data science">
-<meta name="twitter:description" content="Chapter 1： Getting Started and Selecting &amp;amp; Retrieving Data with SQLIntroductionWhat is SQL?Structured Query Language (SQL) is a standard computer language for relational database management and da">
-<meta name="twitter:image" content="https://shipengfei92.github.io/figures/er-diagram.png">
+<meta name="twitter:description" content="Week 1： Getting Started and Selecting &amp;amp; Retrieving Data with SQLIntroductionWhat is SQL?Structured Query Language (SQL) is a standard computer language for relational database management and data">
+<meta name="twitter:image" content="https://shipengfei92.github.io/../assets/img/er-diagram.png">
   
     <link rel="alternative" href="/atom.xml" title="Pengfei Shi" type="application/atom+xml">
   
@@ -200,7 +200,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Chapter-1：-Getting-Started-and-Selecting-amp-Retrieving-Data-with-SQL"><a href="#Chapter-1：-Getting-Started-and-Selecting-amp-Retrieving-Data-with-SQL" class="headerlink" title="Chapter 1： Getting Started and Selecting &amp; Retrieving Data with SQL"></a>Chapter 1： Getting Started and Selecting &amp; Retrieving Data with SQL</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><h3 id="What-is-SQL"><a href="#What-is-SQL" class="headerlink" title="What is SQL?"></a>What is SQL?</h3><p>Structured Query Language (SQL) is a standard computer language for relational database management and data manipulation.</p>
+        <h1 id="Week-1：-Getting-Started-and-Selecting-amp-Retrieving-Data-with-SQL"><a href="#Week-1：-Getting-Started-and-Selecting-amp-Retrieving-Data-with-SQL" class="headerlink" title="Week 1： Getting Started and Selecting &amp; Retrieving Data with SQL"></a>Week 1： Getting Started and Selecting &amp; Retrieving Data with SQL</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><h3 id="What-is-SQL"><a href="#What-is-SQL" class="headerlink" title="What is SQL?"></a>What is SQL?</h3><p>Structured Query Language (SQL) is a standard computer language for relational database management and data manipulation.</p>
 <p>Used to <strong>query, insert, update</strong> and <strong>modify</strong> data.</p>
 <p>Pronounced as “sequel” or S-Q-L.</p>
 <p>Used to communicate with databases;</p>
@@ -393,15 +393,46 @@
 <li>One-to-one: manager to store.</li>
 </ul>
 <h2 id="ER-Diagrams"><a href="#ER-Diagrams" class="headerlink" title="ER Diagrams"></a>ER Diagrams</h2><p>ER Model</p>
-<p><img src="figures/er-diagram.png" alt="ER Diagram"></p>
+<p><img src="../assets/img/er-diagram.png" alt="ER Diagram"></p>
 <ul>
 <li>Show relationships</li>
 <li>Bussiness process</li>
 <li>Represented visually</li>
 <li>Show links (Primary keys)</li>
 </ul>
-<p><img src="figures/er-notation.png" alt="ER Diagram"></p>
-
+<h3 id="Some-examples-of-ER-Diagram"><a href="#Some-examples-of-ER-Diagram" class="headerlink" title="Some examples of ER Diagram"></a>Some examples of ER Diagram</h3><p><img src="../assets/img/er-notation.png" alt="ER Diagram"></p>
+<h2 id="Retrieving-data-with-SELECT-statement"><a href="#Retrieving-data-with-SELECT-statement" class="headerlink" title="Retrieving data with SELECT statement"></a>Retrieving data with SELECT statement</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> prod_name</div><div class="line"><span class="keyword">FROM</span> Products;</div></pre></td></tr></table></figure>
+<p>For multiple columns, be sure to use a comma.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> prod_name,prod_id,prod_price</div><div class="line"><span class="keyword">FROM</span> Products;</div></pre></td></tr></table></figure>
+<p>The following expression is more clearly.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> 	prod_name</div><div class="line">		,prod_id</div><div class="line">		,prod_price</div><div class="line"><span class="keyword">FROM</span> Products;</div></pre></td></tr></table></figure>
+<h3 id="Retrieving-multiple-columns-using-a-wildcard"><a href="#Retrieving-multiple-columns-using-a-wildcard" class="headerlink" title="Retrieving multiple columns using a wildcard"></a>Retrieving multiple columns using a wildcard</h3><p>Request all columns by using a asterisk(*) wildcard character.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> *</div><div class="line"><span class="keyword">FROM</span> Products;</div></pre></td></tr></table></figure>
+<h3 id="Limit-results"><a href="#Limit-results" class="headerlink" title="Limit results"></a>Limit results</h3><p>If the database is very large, we can use <code>LIMIT</code> to limit the number of retrieved results.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> *</div><div class="line"><span class="keyword">FROM</span> Products</div><div class="line"><span class="keyword">LIMIT</span> <span class="number">5</span>;</div></pre></td></tr></table></figure>
+<ul>
+<li>Different Syntaxes</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Database</th>
+<th>Codes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SQLite</td>
+<td><figure class="highlight plain"><figcaption><span>prod_name FROM products LIMIT 5;```|</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">|Oracle|```SELECT prod_name FROM products WHERE ROWNUM &lt;=5;```|</div><div class="line">|DB2|```SELECT prod_name FROM products FETCH FIRST 5 ROWS ONLY;```|</div><div class="line"></div><div class="line"></div><div class="line">## Creating Tables</div><div class="line"></div><div class="line">```sql</div><div class="line">CREATE TABLE Shoes</div><div class="line">(</div><div class="line">Id		char(10)		PRIMARY KEY,</div><div class="line">Brand	char(10)		NOT NULL,</div><div class="line">Price	decimal(8,2)	NOT NULL,</div><div class="line">Desc	Varchar(750)	NULL</div><div class="line">);</div></pre></td></tr></table></figure></td>
+</tr>
+</tbody>
+</table>
+<h3 id="NULL-and-Primary-Keys"><a href="#NULL-and-Primary-Keys" class="headerlink" title="NULL and Primary Keys"></a>NULL and Primary Keys</h3><p>Every column is either NULL or NOT NULL.</p>
+<p>Primary keys cannot be null, they must have a value.</p>
+<h4 id="Adding-data-to-the-table"><a href="#Adding-data-to-the-table" class="headerlink" title="Adding data to the table"></a>Adding data to the table</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Shoes</div><div class="line">(<span class="keyword">Id</span></div><div class="line">,Brand</div><div class="line">,Price</div><div class="line">,<span class="keyword">Desc</span></div><div class="line">)</div><div class="line"><span class="keyword">VALUES</span></div><div class="line">(<span class="string">'12345'</span></div><div class="line">,<span class="string">'Gucci'</span></div><div class="line">,<span class="string">'695.00'</span></div><div class="line">,<span class="literal">NULL</span></div><div class="line">)</div><div class="line">;</div></pre></td></tr></table></figure>
+<h4 id="Create-a-template-table"><a href="#Create-a-template-table" class="headerlink" title="Create a template table"></a>Create a template table</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TEMPORARY</span> <span class="keyword">TABLE</span> Sandals <span class="keyword">AS</span></div><div class="line">(</div><div class="line"><span class="keyword">SELECT</span> *</div><div class="line"><span class="keyword">FROM</span> Shoes</div><div class="line"><span class="keyword">WHERE</span> shoe_type = <span class="string">'sandals'</span></div><div class="line">);</div></pre></td></tr></table></figure>
+<h2 id="Adding-comments"><a href="#Adding-comments" class="headerlink" title="Adding comments"></a>Adding comments</h2><h3 id="Single-line"><a href="#Single-line" class="headerlink" title="Single line"></a>Single line</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> shoe_id</div><div class="line"><span class="comment">--,brand_id</span></div><div class="line">,shoe_name</div><div class="line"><span class="keyword">FROM</span> Shoes;</div></pre></td></tr></table></figure>
+<h3 id="Section"><a href="#Section" class="headerlink" title="Section"></a>Section</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> shoe_id</div><div class="line"><span class="comment">/*,brand_id</span></div><div class="line">,shoe_name</div><div class="line">*/</div><div class="line"><span class="keyword">FROM</span> Shoes;</div></pre></td></tr></table></figure>
       
 
       
@@ -644,19 +675,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HFT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HFT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-High-frequency Trading</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -668,7 +699,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">hotkeys</a>
+                <a href="javascript:void(0)" class="js-tag color5">Blog</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -676,7 +707,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Blog</a>
+                <a href="javascript:void(0)" class="js-tag color3">hotkeys</a>
               </li>
             
             <div class="clearfix"></div>
