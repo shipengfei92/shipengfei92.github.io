@@ -182,7 +182,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/05/SQL-for-data-science/">SQL for data science</a>
+      <a class="article-title" href="/2018/02/05/SQL-for-data-science/">notes for Coursera - SQL for data science</a>
     </h1>
   
 
@@ -428,6 +428,173 @@
 <h4 id="Create-a-template-table"><a href="#Create-a-template-table" class="headerlink" title="Create a template table"></a>Create a template table</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TEMPORARY</span> <span class="keyword">TABLE</span> Sandals <span class="keyword">AS</span></div><div class="line">(</div><div class="line"><span class="keyword">SELECT</span> *</div><div class="line"><span class="keyword">FROM</span> Shoes</div><div class="line"><span class="keyword">WHERE</span> shoe_type = <span class="string">'sandals'</span></div><div class="line">);</div></pre></td></tr></table></figure>
 <h2 id="Adding-comments"><a href="#Adding-comments" class="headerlink" title="Adding comments"></a>Adding comments</h2><h3 id="Single-line"><a href="#Single-line" class="headerlink" title="Single line"></a>Single line</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> shoe_id</div><div class="line"><span class="comment">--,brand_id</span></div><div class="line">,shoe_name</div><div class="line"><span class="keyword">FROM</span> Shoes;</div></pre></td></tr></table></figure>
 <h3 id="Section"><a href="#Section" class="headerlink" title="Section"></a>Section</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> shoe_id</div><div class="line"><span class="comment">/*,brand_id</span></div><div class="line">,shoe_name</div><div class="line">*/</div><div class="line"><span class="keyword">FROM</span> Shoes;</div></pre></td></tr></table></figure>
+<h1 id="Week-2-Filtering-Sorting-and-Calculating-Data-with-SQL"><a href="#Week-2-Filtering-Sorting-and-Calculating-Data-with-SQL" class="headerlink" title="Week 2: Filtering, Sorting, and Calculating Data with SQL"></a>Week 2: Filtering, Sorting, and Calculating Data with SQL</h1><h2 id="Introductions"><a href="#Introductions" class="headerlink" title="Introductions"></a>Introductions</h2><h3 id="Clauses-and-Operators-in-SQL"><a href="#Clauses-and-Operators-in-SQL" class="headerlink" title="Clauses and Operators in SQL"></a>Clauses and Operators in SQL</h3><ul>
+<li>WHERE</li>
+<li>BETWEEN</li>
+<li>IN</li>
+<li>OR</li>
+<li>NOT</li>
+<li>LIKE</li>
+<li>ORDER BY</li>
+<li>GROUP BY</li>
+</ul>
+<h3 id="Wildcards"><a href="#Wildcards" class="headerlink" title="Wildcards"></a>Wildcards</h3><h3 id="Math-Operators"><a href="#Math-Operators" class="headerlink" title="Math Operators"></a>Math Operators</h3><ul>
+<li>AVERAGE</li>
+<li>COUNT</li>
+<li>MAX</li>
+<li>MIN</li>
+</ul>
+<h2 id="Basics-of-Filtering-with-SQL"><a href="#Basics-of-Filtering-with-SQL" class="headerlink" title="Basics of Filtering with SQL"></a>Basics of Filtering with SQL</h2><h3 id="Why"><a href="#Why" class="headerlink" title="Why?"></a>Why?</h3><ul>
+<li>Be specific about the data you want to retrieve</li>
+<li>Reduce the number of records you retrieve</li>
+<li>Increase query performance</li>
+<li>Reduce the strain on the client application</li>
+<li>Goverance the limitations</li>
+</ul>
+<h3 id="WHERE-Clause"><a href="#WHERE-Clause" class="headerlink" title="WHERE Clause"></a>WHERE Clause</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> column_name,column_name</div><div class="line"><span class="keyword">FROM</span> table_name</div><div class="line"><span class="keyword">WHERE</span> column_name <span class="keyword">operator</span> <span class="keyword">value</span>;</div></pre></td></tr></table></figure>
+<p><strong>Some clause operators</strong></p>
+<p><img src="../assets/img/operators.png" alt="Operators"></p>
+<h4 id="Filtering-on-a-single-condition"><a href="#Filtering-on-a-single-condition" class="headerlink" title="Filtering on a single condition"></a>Filtering on a single condition</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> ProductName</div><div class="line">,UnitPrice</div><div class="line">,SupplierID</div><div class="line"><span class="keyword">FROM</span> Products</div><div class="line"><span class="keyword">WHERE</span> ProductName =  <span class="string">'Tofu'</span>;</div></pre></td></tr></table></figure>
+<h4 id="Filtering-on-a-single-value"><a href="#Filtering-on-a-single-value" class="headerlink" title="Filtering on a single value"></a>Filtering on a single value</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> ProductName</div><div class="line">,UnitPrice</div><div class="line">,SupplierID</div><div class="line"><span class="keyword">FROM</span> Products</div><div class="line"><span class="keyword">WHERE</span> UnitPrice &gt;=  <span class="number">75</span>;</div></pre></td></tr></table></figure>
+<h4 id="Checking-for-non-matches"><a href="#Checking-for-non-matches" class="headerlink" title="Checking for non-matches"></a>Checking for non-matches</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> ProductName</div><div class="line">,UnitPrice</div><div class="line">,SupplierID</div><div class="line"><span class="keyword">FROM</span> Products</div><div class="line"><span class="keyword">WHERE</span> ProductName &lt;&gt;  <span class="string">'Alice'</span>;</div></pre></td></tr></table></figure>
+<h4 id="Filtering-with-a-range-of-values-BETWEEN…AND…"><a href="#Filtering-with-a-range-of-values-BETWEEN…AND…" class="headerlink" title="Filtering with a range of values (BETWEEN…AND…)"></a>Filtering with a range of values (BETWEEN…AND…)</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> ProductName</div><div class="line">,UnitPrice</div><div class="line">,SupplierID</div><div class="line"><span class="keyword">FROM</span> Products</div><div class="line"><span class="keyword">WHERE</span> UnitsInStock <span class="keyword">BETWEEN</span> <span class="number">15</span> <span class="keyword">AND</span> <span class="number">80</span>;</div></pre></td></tr></table></figure>
+<h4 id="Filtering-no-value-NULL"><a href="#Filtering-no-value-NULL" class="headerlink" title="Filtering no value (NULL)"></a>Filtering no value (NULL)</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> ProductName</div><div class="line">,UnitPrice</div><div class="line">,SupplierID</div><div class="line"><span class="keyword">FROM</span> Products</div><div class="line"><span class="keyword">WHERE</span> ProductName <span class="keyword">IS</span> <span class="literal">NULL</span>;</div></pre></td></tr></table></figure>
+<h2 id="Advanced-filtering-IN-OR-and-NOT"><a href="#Advanced-filtering-IN-OR-and-NOT" class="headerlink" title="Advanced filtering: IN, OR, and NOT"></a>Advanced filtering: IN, OR, and NOT</h2><h3 id="IN-operator"><a href="#IN-operator" class="headerlink" title="IN operator"></a>IN operator</h3><ul>
+<li>Specifies a range of conditions</li>
+<li>Comma delimited list of values</li>
+<li>Enclosed in ()</li>
+</ul>
+<p><strong>Example</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> ProductID</div><div class="line">,UnitPrice</div><div class="line">,SupplierID</div><div class="line"><span class="keyword">FROM</span> Products</div><div class="line"><span class="keyword">WHERE</span> SupplierID <span class="keyword">IN</span> (<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>);</div></pre></td></tr></table></figure>
+<h3 id="OR-operator"><a href="#OR-operator" class="headerlink" title="OR operator"></a>OR operator</h3><p>DBMS will not evaluate the second conditions in WHERE clause if the first condition is met.</p>
+<p>Use for any rows matching the specific conditions.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> ProductName</div><div class="line">,UnitPrice</div><div class="line">,SupplierID</div><div class="line"><span class="keyword">FROM</span> Products</div><div class="line"><span class="keyword">WHERE</span> ProductName =  <span class="string">'Tofu'</span> <span class="keyword">OR</span> <span class="string">'Konbu'</span>;</div></pre></td></tr></table></figure>
+<h3 id="IN-vs-OR"><a href="#IN-vs-OR" class="headerlink" title="IN vs. OR"></a>IN vs. OR</h3><p>IN works the same as OR.</p>
+<p>Benfits of IN:</p>
+<ol>
+<li>Long list of options,</li>
+<li>IN executes faster than OR,</li>
+<li>Don’t have to think about the order with IN,</li>
+<li>Can contain another SELECT5</li>
+</ol>
+<h3 id="OR-with-AND"><a href="#OR-with-AND" class="headerlink" title="OR with AND"></a>OR with AND</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> ProductName</div><div class="line">,UnitPrice</div><div class="line">,SupplierID</div><div class="line"><span class="keyword">FROM</span> Products</div><div class="line"><span class="keyword">WHERE</span> SupplierID =  <span class="number">9</span> <span class="keyword">OR</span> SupplierID =  <span class="number">11</span> <span class="keyword">AND</span> UnitPrice &gt; <span class="number">15</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> ProductName</div><div class="line">,UnitPrice</div><div class="line">,SupplierID</div><div class="line"><span class="keyword">FROM</span> Products</div><div class="line"><span class="keyword">WHERE</span> (SupplierID =  <span class="number">9</span> <span class="keyword">OR</span> SupplierID =  <span class="number">11</span>) <span class="keyword">AND</span> UnitPrice &gt; <span class="number">15</span>;</div></pre></td></tr></table></figure>
+<p>Don’t rely on the default order, it’s better to have the habit of using the ().</p>
+<h3 id="NOT-operator"><a href="#NOT-operator" class="headerlink" title="NOT operator"></a>NOT operator</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> *</div><div class="line"><span class="keyword">FROM</span> Employees</div><div class="line"><span class="keyword">WHERE</span> <span class="keyword">NOT</span> City = <span class="string">'London'</span> <span class="keyword">AND</span> <span class="keyword">NOT</span> City = <span class="string">'Seattle'</span>;</div></pre></td></tr></table></figure>
+<h2 id="Using-Wildcards-in-SQL"><a href="#Using-Wildcards-in-SQL" class="headerlink" title="Using Wildcards in SQL"></a>Using Wildcards in SQL</h2><ul>
+<li>Special character used to match parts of a value,</li>
+<li>Use <code>LIKE</code> Operator</li>
+</ul>
+<h3 id="What-are-wildcards"><a href="#What-are-wildcards" class="headerlink" title="What are wildcards?"></a>What are wildcards?</h3><ul>
+<li>Can only be used with strings.</li>
+<li>Cannot be used for non-text datatype.</li>
+<li>Helpful for data scientists as they explore string variables.</li>
+</ul>
+<h3 id="Using-wildcards"><a href="#Using-wildcards" class="headerlink" title="Using % wildcards"></a>Using % wildcards</h3><p><img src="../assets/img/wildcards1.png" alt="Operators"></p>
+<p><img src="../assets/img/wildcards2.png" alt="Operators"></p>
+<ul>
+<li>% wildcards will not match NULLS, NULL represents no value in a column.</li>
+</ul>
+<h3 id="Using-underscore-wildcards"><a href="#Using-underscore-wildcards" class="headerlink" title="Using underscore(_) wildcards"></a>Using underscore(_) wildcards</h3><ul>
+<li>Matches a single character.</li>
+<li>Is not supported by DB2.</li>
+</ul>
+<h3 id="Downsides-of-wildcards"><a href="#Downsides-of-wildcards" class="headerlink" title="Downsides of wildcards"></a>Downsides of wildcards</h3><ul>
+<li>Takes longer to run.</li>
+<li>Better to use another operator (=, &lt;, &gt;=, and etc.)</li>
+<li>Statements with wildcards will take longer to run if used at the end of search pattern.</li>
+<li>Placement of wildcards is important.</li>
+</ul>
+<h2 id="Sorting-with-ORDER-BY"><a href="#Sorting-with-ORDER-BY" class="headerlink" title="Sorting with ORDER BY"></a>Sorting with <code>ORDER BY</code></h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> something</div><div class="line"><span class="keyword">FROM</span> <span class="keyword">database</span></div><div class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> characteristic;</div></pre></td></tr></table></figure>
+<ul>
+<li>Can sort by a column not retrieved</li>
+<li>Must always be the last clause in a select statement</li>
+</ul>
+<h3 id="Sorting-by-column-position"><a href="#Sorting-by-column-position" class="headerlink" title="Sorting by column position"></a>Sorting by column position</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ORDER BY 2,3;</div></pre></td></tr></table></figure>
+<p>It means data sorted by 2nd and 3rd column.</p>
+<h3 id="Sort-direction"><a href="#Sort-direction" class="headerlink" title="Sort direction"></a>Sort direction</h3><p><code>DESC</code>: descending order</p>
+<p><code>ASC</code>: ascending order</p>
+<p>Only applies to the column names it directly precedes.</p>
+<h2 id="Math-operators"><a href="#Math-operators" class="headerlink" title="Math operators"></a>Math operators</h2><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>Addition</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Subtraction</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Multiplication</td>
+</tr>
+<tr>
+<td>/</td>
+<td>Division</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Order-of-operators"><a href="#Order-of-operators" class="headerlink" title="Order of operators"></a>Order of operators</h3><ul>
+<li>Parenthese</li>
+<li>Exponents</li>
+<li>Multiplication</li>
+<li>Division</li>
+<li>Addition</li>
+<li>Subtraction</li>
+</ul>
+<h3 id="Use-parenthese-if-needed"><a href="#Use-parenthese-if-needed" class="headerlink" title="Use parenthese if needed"></a>Use parenthese if needed</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> ProductID</div><div class="line">,Quantity</div><div class="line">,UnitPrice</div><div class="line">,Discount</div><div class="line">,(UnitPrice - Discount) / Quantity <span class="keyword">AS</span> Total_Cost</div><div class="line"><span class="keyword">FROM</span> Orders;</div></pre></td></tr></table></figure>
+<h2 id="Aggregate-Functions"><a href="#Aggregate-Functions" class="headerlink" title="Aggregate Functions"></a>Aggregate Functions</h2><h3 id="What"><a href="#What" class="headerlink" title="What?"></a>What?</h3><ul>
+<li>Used to summarize data</li>
+<li>Finding the highest and lowest values</li>
+<li>Finding the total number of rows</li>
+<li>Finding the average value</li>
+</ul>
+<h3 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h3><p><img src="../assets/img/aggregate.png" alt="Operators"></p>
+<h3 id="Average-function"><a href="#Average-function" class="headerlink" title="Average function"></a>Average function</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">AVG</span>(UnitPrice) <span class="keyword">AS</span> avg_price</div><div class="line"><span class="keyword">FROM</span> products;</div></pre></td></tr></table></figure>
+<h3 id="Count-functions"><a href="#Count-functions" class="headerlink" title="Count functions"></a>Count functions</h3><p>1.COUNT(*) - Counts all rows (contain NULLs).</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*) <span class="keyword">AS</span> total_customers</div><div class="line"><span class="keyword">FROM</span> Customers;</div></pre></td></tr></table></figure>
+<p>2.COUNT(Column_name) - Counts all rows in a specific column ignoring NULL value. </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(CustomerID) <span class="keyword">AS</span> total_customers</div><div class="line"><span class="keyword">FROM</span> Customers;</div></pre></td></tr></table></figure>
+<h3 id="MIN-and-MAX-functions"><a href="#MIN-and-MAX-functions" class="headerlink" title="MIN and MAX functions"></a>MIN and MAX functions</h3><p>Columns with NULL values are ignored by MIN and MAX functions.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">MAX</span>(UnitPrice) <span class="keyword">AS</span> max_prod_price</div><div class="line">,<span class="keyword">MIN</span>(UnitPrice) <span class="keyword">AS</span> min_prod_price</div><div class="line"><span class="keyword">FROM</span> Products;</div></pre></td></tr></table></figure>
+<h3 id="SUM-aggregate-functions"><a href="#SUM-aggregate-functions" class="headerlink" title="SUM aggregate functions"></a>SUM aggregate functions</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">SUM</span>(UnitPrice) <span class="keyword">AS</span> total_prod_price</div><div class="line"><span class="keyword">FROM</span> Products;</div></pre></td></tr></table></figure>
+<h3 id="Using-DISTINCT-on-aggregate-functions"><a href="#Using-DISTINCT-on-aggregate-functions" class="headerlink" title="Using DISTINCT on aggregate functions"></a>Using DISTINCT on aggregate functions</h3><ul>
+<li>If DISTINCT is not specified, ALL is assumed.</li>
+<li>Cannot use DISTINCT on COUNT(*).</li>
+<li>No value to use with MIN and MAX function.</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> CustomerID)</div><div class="line"><span class="keyword">FROM</span> Customers;</div></pre></td></tr></table></figure>
+<h2 id="Grouping-Data-with-SQL"><a href="#Grouping-Data-with-SQL" class="headerlink" title="Grouping Data with SQL"></a>Grouping Data with SQL</h2><h3 id="Grouping-examples"><a href="#Grouping-examples" class="headerlink" title="Grouping examples"></a>Grouping examples</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> </div><div class="line">Region</div><div class="line">,<span class="keyword">COUNT</span>(CustomerID) <span class="keyword">AS</span> total_customers</div><div class="line"><span class="keyword">FROM</span> Customers</div><div class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Region;</div></pre></td></tr></table></figure>
+<h3 id="Notices"><a href="#Notices" class="headerlink" title="Notices"></a>Notices</h3><ul>
+<li>GROUP BY clause can contain multiple columns.</li>
+<li>Every column in your SELECT statement must be present in a GROUP BY clause (except for aggregate functions).</li>
+<li>NULLs will be grouped together if your GROUP BY column contains NULLs.</li>
+</ul>
+<h3 id="HAVING-clause-filtering-for-groups"><a href="#HAVING-clause-filtering-for-groups" class="headerlink" title="HAVING clause filtering for groups"></a>HAVING clause filtering for groups</h3><p>WHERE does not work for GROUP.</p>
+<p>WHERE filters on rows.</p>
+<p>Instead using HAVING clause to filter for groups.</p>
+<h3 id="HAVING-examples"><a href="#HAVING-examples" class="headerlink" title="HAVING examples"></a>HAVING examples</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> </div><div class="line">CustomerID</div><div class="line">,<span class="keyword">COUNT</span>(*) <span class="keyword">AS</span> orders</div><div class="line"><span class="keyword">FROM</span> Orders</div><div class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> CustomerID</div><div class="line"><span class="keyword">HAVING</span> <span class="keyword">COUNT</span>(*) &gt;=<span class="number">2</span>;</div></pre></td></tr></table></figure>
+<h3 id="WHERE-vs-HAVING"><a href="#WHERE-vs-HAVING" class="headerlink" title="WHERE vs. HAVING"></a>WHERE vs. HAVING</h3><p>WHERE filters before data is grouped.</p>
+<p>HAVING filters after data is grouped.</p>
+<p>Rows elimated by WHERE clause will not be included in the group.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> </div><div class="line">SupplierID</div><div class="line">,<span class="keyword">COUNT</span>(*) <span class="keyword">AS</span> Num_prod</div><div class="line"><span class="keyword">FROM</span> Products</div><div class="line"><span class="keyword">WHERE</span> UnitPrice &gt;= <span class="number">4</span></div><div class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> SupplierID</div><div class="line"><span class="keyword">HAVING</span> <span class="keyword">COUNT</span>(*) &gt;=<span class="number">2</span>;</div></pre></td></tr></table></figure>
+<h2 id="Putting-it-all-together"><a href="#Putting-it-all-together" class="headerlink" title="Putting it all together"></a>Putting it all together</h2><h3 id="Filtering-is-useful"><a href="#Filtering-is-useful" class="headerlink" title="Filtering is useful"></a>Filtering is useful</h3><p>Narrow down your results.</p>
+<p>Increasing query &amp; application performance.</p>
+<p>Understanding your data:</p>
+<ul>
+<li>Finding specific values</li>
+<li>Finding a range of values</li>
+<li>Finding blank values</li>
+</ul>
+<h3 id="Key-SQL-clauses"><a href="#Key-SQL-clauses" class="headerlink" title="Key SQL clauses"></a>Key SQL clauses</h3><p><img src="../assets/img/key.png" alt="Operators"></p>
+
       
 
       
@@ -1289,11 +1456,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
+                <a href="javascript:void(0)" class="js-tag color4">HFT</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HFT</a>
+                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1301,11 +1468,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color1">Cloud Computing</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Cloud Computing</a>
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
