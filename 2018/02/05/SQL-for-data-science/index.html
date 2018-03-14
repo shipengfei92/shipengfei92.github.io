@@ -22,7 +22,8 @@
 <meta property="og:image" content="https://shipengfei92.github.io/../assets/img/aggregate.png">
 <meta property="og:image" content="https://shipengfei92.github.io/../assets/img/key.png">
 <meta property="og:image" content="https://shipengfei92.github.io/../assets/img/joins.png">
-<meta property="og:updated_time" content="2018-03-14T16:04:30.000Z">
+<meta property="og:image" content="https://shipengfei92.github.io/../assets/img/ChinookDatabaseSchema.png">
+<meta property="og:updated_time" content="2018-03-14T16:06:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="notes for Coursera - SQL for data science">
 <meta name="twitter:description" content="Week 1： Getting Started and Selecting &amp;amp; Retrieving Data with SQLIntroductionWhat is SQL?Structured Query Language (SQL) is a standard computer language for relational database management and data">
@@ -717,6 +718,7 @@
 <li><a href="https://blog.modeanalytics.com/learning-python-sql/" target="_blank" rel="external">Thinking in SQL vs Thinking in Python</a></li>
 </ol>
 <h2 id="Module-3-Coding-Assignment"><a href="#Module-3-Coding-Assignment" class="headerlink" title="Module 3 Coding Assignment"></a>Module 3 Coding Assignment</h2><p>All of the questions in this quiz refer to the open source Chinook Database. Please familiarize yourself with the ER diagram in order to familiarize yourself with the table and column names in order to write accurate queries and get the appropriate answers.</p>
+<p><img src="../assets/img/ChinookDatabaseSchema.png" alt="Joins"></p>
 <h3 id="1-Using-a-subquery-find-the-names-of-all-the-tracks-for-the-album-“Californication”"><a href="#1-Using-a-subquery-find-the-names-of-all-the-tracks-for-the-album-“Californication”" class="headerlink" title="1. Using a subquery, find the names of all the tracks for the album “Californication”."></a>1. Using a subquery, find the names of all the tracks for the album “Californication”.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">Name</span></div><div class="line"><span class="keyword">FROM</span> Tracks</div><div class="line"><span class="keyword">WHERE</span> AlbumId <span class="keyword">IN</span> (</div><div class="line"><span class="keyword">SELECT</span> AlbumId</div><div class="line"><span class="keyword">FROM</span> Albums</div><div class="line"><span class="keyword">WHERE</span> Title = <span class="string">"Californication"</span>);</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">+-------------------+</div><div class="line">| Name              |</div><div class="line">+-------------------+</div><div class="line">| Around The World  |</div><div class="line">| Parallel Universe |</div><div class="line">| Scar Tissue       |</div><div class="line">| Otherside         |</div><div class="line">| Get On Top        |</div><div class="line">| Californication   |</div><div class="line">| Easily            |</div><div class="line">| Porcelain         |</div><div class="line">| Emit Remmus       |</div><div class="line">| I Like Dirt       |</div><div class="line">+-------------------+</div><div class="line">(Output limit exceeded, 10 of 15 total rows shown)</div></pre></td></tr></table></figure>
 <h3 id="2-Find-the-total-number-of-invoices-for-each-customer-along-with-the-customer’s-full-name-city-and-email"><a href="#2-Find-the-total-number-of-invoices-for-each-customer-along-with-the-customer’s-full-name-city-and-email" class="headerlink" title="2. Find the total number of invoices for each customer along with the customer’s full name, city and email."></a>2. Find the total number of invoices for each customer along with the customer’s full name, city and email.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> Email,City,FirstName,</div><div class="line">(<span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*)</div><div class="line"><span class="keyword">FROM</span> Invoices</div><div class="line"><span class="keyword">WHERE</span> Invoices.CustomerId = Customers.CustomerId) <span class="keyword">AS</span> Numbers</div><div class="line"><span class="keyword">FROM</span> Customers;</div></pre></td></tr></table></figure>
@@ -983,11 +985,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -999,15 +1001,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-High-frequency Trading</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Cloud Computing</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SODA</a>
+                <a href="javascript:void(0)" class="js-tag color4">-High-frequency Trading</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">hackerrank</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1015,11 +1017,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Blog</a>
+                <a href="javascript:void(0)" class="js-tag color5">SODA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hackerrank</a>
+                <a href="javascript:void(0)" class="js-tag color5">Blog</a>
               </li>
             
             <div class="clearfix"></div>
