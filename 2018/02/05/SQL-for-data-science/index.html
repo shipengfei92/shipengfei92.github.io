@@ -21,7 +21,8 @@
 <meta property="og:image" content="https://shipengfei92.github.io/../assets/img/wildcards2.png">
 <meta property="og:image" content="https://shipengfei92.github.io/../assets/img/aggregate.png">
 <meta property="og:image" content="https://shipengfei92.github.io/../assets/img/key.png">
-<meta property="og:updated_time" content="2018-02-20T16:11:46.000Z">
+<meta property="og:image" content="https://shipengfei92.github.io/../assets/img/joins.png">
+<meta property="og:updated_time" content="2018-03-14T16:04:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="notes for Coursera - SQL for data science">
 <meta name="twitter:description" content="Week 1： Getting Started and Selecting &amp;amp; Retrieving Data with SQLIntroductionWhat is SQL?Structured Query Language (SQL) is a standard computer language for relational database management and data">
@@ -604,6 +605,132 @@
 <li>Finding blank values</li>
 </ul>
 <h3 id="Key-SQL-clauses"><a href="#Key-SQL-clauses" class="headerlink" title="Key SQL clauses"></a>Key SQL clauses</h3><p><img src="../assets/img/key.png" alt="Operators"></p>
+<h1 id="Week-3-Subqueries-and-joins-in-SQL"><a href="#Week-3-Subqueries-and-joins-in-SQL" class="headerlink" title="Week 3: Subqueries and joins in SQL"></a>Week 3: Subqueries and joins in SQL</h1><h2 id="Using-Subqueries"><a href="#Using-Subqueries" class="headerlink" title="Using Subqueries"></a>Using Subqueries</h2><h3 id="What-1"><a href="#What-1" class="headerlink" title="What?"></a>What?</h3><ul>
+<li>Queries embedded into other queries</li>
+<li>Relational databases store data in multiple tables</li>
+<li>Subqueries merge data from multiple source together</li>
+<li>Helps with adding other filtering criteria</li>
+</ul>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> CustomerID</div><div class="line">,CompanyName</div><div class="line">,Region</div><div class="line"><span class="keyword">FROM</span> Customers</div><div class="line"><span class="keyword">WHERE</span> customerID <span class="keyword">in</span> (<span class="keyword">SELECT</span> CustomerID</div><div class="line">		<span class="keyword">FROM</span> Orders</div><div class="line">		<span class="keyword">WHERE</span> Freight &gt; <span class="number">100</span>);</div></pre></td></tr></table></figure>
+<h3 id="Working-with-Subsequery-statements"><a href="#Working-with-Subsequery-statements" class="headerlink" title="Working with Subsequery statements"></a>Working with Subsequery statements</h3><p>Always perform the innermost SELECT portion first.</p>
+<p>DBMS is performing two operations</p>
+<ol>
+<li>Getting the order numbers for the product selected,</li>
+<li>Adding that to the WHERE clause and processing the overall SELECT statement.</li>
+</ol>
+<h2 id="Subquery-best-practices-and-considerations"><a href="#Subquery-best-practices-and-considerations" class="headerlink" title="Subquery best practices and considerations"></a>Subquery best practices and considerations</h2><ol>
+<li>There is no limit to the number of subqueries you can have.</li>
+<li>Performance slows when you nest too deeply.</li>
+<li>Subquery selects can only retrieve a single column.</li>
+</ol>
+<h3 id="Subquery-in-subquery"><a href="#Subquery-in-subquery" class="headerlink" title="Subquery in subquery"></a>Subquery in subquery</h3><p><strong>Be sure to use indenting.</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> customer_name</div><div class="line">,customer_state</div><div class="line">,(<span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*) <span class="keyword">AS</span> orders</div><div class="line">	<span class="keyword">FROM</span> Orders</div><div class="line">	<span class="keyword">WHERE</span> Orders.customer_id = Customer.customer_id) <span class="keyword">AS</span> orders</div><div class="line"><span class="keyword">FROM</span> Customers</div><div class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Customer_name;</div></pre></td></tr></table></figure>
+<h3 id="The-power-of-subqueries"><a href="#The-power-of-subqueries" class="headerlink" title="The power of subqueries"></a>The power of subqueries</h3><ul>
+<li>Subqueries are powerful tools</li>
+<li>Not always the best option due to performance</li>
+</ul>
+<h2 id="Joining-tables-an-introduction"><a href="#Joining-tables-an-introduction" class="headerlink" title="Joining tables: an introduction"></a>Joining tables: an introduction</h2><h3 id="Benefits-of-breaking-data-into-tables"><a href="#Benefits-of-breaking-data-into-tables" class="headerlink" title="Benefits of breaking data into tables"></a>Benefits of breaking data into tables</h3><ul>
+<li>Efficient storage</li>
+<li>Easier manipulation</li>
+<li>Greater scalability</li>
+<li>Logically models a process</li>
+<li>Tables are related through common values (keys)</li>
+</ul>
+<h3 id="Joins"><a href="#Joins" class="headerlink" title="Joins"></a>Joins</h3><ul>
+<li>Associate correct records from each table on the fly.</li>
+<li>Allows data retrieval from multiple tables in one query.</li>
+<li>Joins are not physical, they persist data for the duration of the query execution.</li>
+</ul>
+<h2 id="Cartesian-Cross-Joins"><a href="#Cartesian-Cross-Joins" class="headerlink" title="Cartesian (Cross) Joins"></a>Cartesian (Cross) Joins</h2><ul>
+<li>Not frequently used.</li>
+<li>Computationally taxing.</li>
+<li>Will return products with the incorrect vendor or no vendor at all.</li>
+</ul>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> vendor_name</div><div class="line">,unit_price</div><div class="line">,company_name</div><div class="line"><span class="keyword">FROM</span> suppliers</div><div class="line"><span class="keyword">CROSS</span> <span class="keyword">JOIN</span> products;</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> vendor_name</div><div class="line">,product_name</div><div class="line">,product_price</div><div class="line"><span class="keyword">FROM</span> Vendors,Products</div><div class="line"><span class="keyword">WHERE</span> Vendors.vendor_id = Products.vendor_id;</div></pre></td></tr></table></figure>
+<h2 id="Inner-Joins"><a href="#Inner-Joins" class="headerlink" title="Inner Joins"></a>Inner Joins</h2><h3 id="What-2"><a href="#What-2" class="headerlink" title="What?"></a>What?</h3><p>The INNER JOIN keyword selects records that have matching values in both tables.</p>
+<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> suppliers.CompanyName</div><div class="line">,ProductName</div><div class="line">,UnitPrice</div><div class="line"><span class="keyword">FROM</span> Suppliers <span class="keyword">INNER</span> <span class="keyword">JOIN</span> Products</div><div class="line"><span class="keyword">ON</span> Suppliers.supplierid = Products.supplierid;</div></pre></td></tr></table></figure>
+<h3 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h3><ul>
+<li>Join type is specified (INNER JOIN)</li>
+<li>Join condition is in the FROM clause and uses ON clause</li>
+<li>Joining more tables together affects overall database performance</li>
+<li>You can join multiple tables, no limit</li>
+<li>List all the tables, then define conditions</li>
+</ul>
+<h3 id="Inner-Join-with-multiple-tables"><a href="#Inner-Join-with-multiple-tables" class="headerlink" title="Inner Join with multiple tables"></a>Inner Join with multiple tables</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> o.OrderID,</div><div class="line">c.CompanyName,</div><div class="line">e.LastName</div><div class="line"><span class="keyword">FROM</span> ((Orders o <span class="keyword">INNER</span> <span class="keyword">JOIN</span> Customers c <span class="keyword">ON</span> o.CustomerID = c.CustomerID)</div><div class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> Employee e <span class="keyword">ON</span> o.EmployeeID = e.EmployeeID);</div></pre></td></tr></table></figure>
+<h3 id="Best-practices"><a href="#Best-practices" class="headerlink" title="Best practices"></a>Best practices</h3><ul>
+<li>Make sure you are pre-qualifying names</li>
+<li>Do not make unnecessary joins</li>
+<li>Think about the type if join you are making</li>
+</ul>
+<h2 id="Aliases-and-self-joins"><a href="#Aliases-and-self-joins" class="headerlink" title="Aliases and self joins"></a>Aliases and self joins</h2><h3 id="What-3"><a href="#What-3" class="headerlink" title="What?"></a>What?</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> column_name</div><div class="line"><span class="keyword">FROM</span> table_name <span class="keyword">AS</span> alias_name;</div></pre></td></tr></table></figure>
+<h3 id="Query-example-using-alias"><a href="#Query-example-using-alias" class="headerlink" title="Query example using alias"></a>Query example using alias</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> vendor_name</div><div class="line">,product_name</div><div class="line">,product_price</div><div class="line"><span class="keyword">FROM</span> Vendors <span class="keyword">AS</span> v, Products <span class="keyword">AS</span> p</div><div class="line"><span class="keyword">WHERE</span> v.vendor_id = p.vendor_id;</div></pre></td></tr></table></figure>
+<h3 id="Self-joins"><a href="#Self-joins" class="headerlink" title="Self joins"></a>Self joins</h3><ul>
+<li>Match customers from the same city</li>
+<li>Take the table and treat it like two separate tables</li>
+<li>Join the original table to itself</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> column_names</div><div class="line"><span class="keyword">FROM</span> Table1 T1, Table2 T2</div><div class="line"><span class="keyword">WHERE</span> conditions;</div></pre></td></tr></table></figure>
+<h4 id="Examples-1"><a href="#Examples-1" class="headerlink" title="Examples"></a>Examples</h4><p>Matching the customers from the same city:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> A.CustomerName <span class="keyword">AS</span> CustomerName1</div><div class="line">,B.CustomerName <span class="keyword">AS</span> CustomerName2</div><div class="line">,A.City</div><div class="line"><span class="keyword">FROM</span> Customers A, Customers B</div><div class="line"><span class="keyword">WHERE</span> A.CustomerID = B.CustomerID</div><div class="line"><span class="keyword">AND</span> A.City = B.City</div><div class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> A.City;</div></pre></td></tr></table></figure>
+<h2 id="Advanced-joins-Left-Right-and-Full-Outer-Joins"><a href="#Advanced-joins-Left-Right-and-Full-Outer-Joins" class="headerlink" title="Advanced joins: Left, Right and Full Outer Joins."></a>Advanced joins: Left, Right and Full Outer Joins.</h2><ul>
+<li>SQL Lite only does left joins,</li>
+<li>Other DBMS use all joins.</li>
+</ul>
+<h3 id="Left-Join"><a href="#Left-Join" class="headerlink" title="Left Join"></a>Left Join</h3><p>Return all records from the left table, and the matched records from the right table. </p>
+<p>The result is NULL from the right side, if there is no match.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> Persons.LastName, Persons.FirstName, Orders.OrderNo</div><div class="line"><span class="keyword">FROM</span> Persons</div><div class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Orders</div><div class="line"><span class="keyword">ON</span> Persons.Id_P=Orders.Id_P</div><div class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Persons.LastName</div></pre></td></tr></table></figure>
+<h3 id="Right-Join"><a href="#Right-Join" class="headerlink" title="Right Join"></a>Right Join</h3><p>Return all records from the right table, and the matched records from the left table. </p>
+<p>The result is NULL from the left side, if there is no match.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> Persons.LastName, Persons.FirstName, Orders.OrderNo</div><div class="line"><span class="keyword">FROM</span> Persons</div><div class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> Orders</div><div class="line"><span class="keyword">ON</span> Persons.Id_P=Orders.Id_P</div><div class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Persons.LastName</div></pre></td></tr></table></figure>
+<p>Left Joins can be turned into right joins by reversing the order of tables.</p>
+<h3 id="Full-Outer-Join"><a href="#Full-Outer-Join" class="headerlink" title="Full Outer Join"></a>Full Outer Join</h3><p>Return all records when there is a match in either left table or right table records.</p>
+<p>Select all customers and orders:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> Persons.LastName, Persons.FirstName, Orders.OrderNo</div><div class="line"><span class="keyword">FROM</span> Persons</div><div class="line"><span class="keyword">FULL</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> Orders</div><div class="line"><span class="keyword">ON</span> Persons.Id_P=Orders.Id_P</div><div class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Persons.LastName</div></pre></td></tr></table></figure>
+<h2 id="Unions"><a href="#Unions" class="headerlink" title="Unions"></a>Unions</h2><ul>
+<li><p>The UNION operator is used to combine the result-set of two or more SELECT statements.</p>
+</li>
+<li><p>Each SELECT statement with UNION must have the same number of columns.</p>
+</li>
+<li>Columns must have similar data types.</li>
+<li>The columns in each SELECT statement must be in the same order.</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> column_name(s) <span class="keyword">FROM</span> table1</div><div class="line"><span class="keyword">UNION</span></div><div class="line"><span class="keyword">SELECT</span> column_name(s) <span class="keyword">FROM</span> table2;</div></pre></td></tr></table></figure>
+<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><ul>
+<li>UNION selects only distinct values. </li>
+<li>Use UNION ALL to also select duplicate values!</li>
+</ul>
+<h3 id="Avoiding-duplicate-in-a-Union"><a href="#Avoiding-duplicate-in-a-Union" class="headerlink" title="Avoiding duplicate in a Union"></a>Avoiding duplicate in a Union</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table1</div><div class="line"><span class="keyword">WHERE</span> a = X</div><div class="line"><span class="keyword">UNION</span> ALL</div><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table2</div><div class="line"><span class="keyword">WHERE</span> b = Y <span class="keyword">AND</span> a!=X;</div></pre></td></tr></table></figure>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><h3 id="Best-practices-using-joins"><a href="#Best-practices-using-joins" class="headerlink" title="Best practices using joins"></a>Best practices using joins</h3><ul>
+<li>Check the number of records.</li>
+<li>Check for duplicates.</li>
+<li>Check the number of records each time you make a new join.</li>
+<li>Start smart: one table at a time.</li>
+</ul>
+<h3 id="Join-syntax"><a href="#Join-syntax" class="headerlink" title="Join syntax"></a>Join syntax</h3><ul>
+<li>Check the particular syntax for your DBMS.</li>
+<li>SQLite does not do RIGHT and FULL OUTER joins.</li>
+</ul>
+<p><img src="../assets/img/joins.png" alt="Joins"></p>
+<h2 id="Further-readings"><a href="#Further-readings" class="headerlink" title="Further readings"></a>Further readings</h2><ol>
+<li><a href="https://blog.sqlauthority.com/2009/03/11/sql-server-difference-between-union-vs-union-all-optimal-performance-comparison/" target="_blank" rel="external">Difference Between Union and Union All - Optimal Performance Comparison</a></li>
+<li><a href="https://blog.modeanalytics.com/learning-python-sql/" target="_blank" rel="external">Thinking in SQL vs Thinking in Python</a></li>
+</ol>
+<h2 id="Module-3-Coding-Assignment"><a href="#Module-3-Coding-Assignment" class="headerlink" title="Module 3 Coding Assignment"></a>Module 3 Coding Assignment</h2><p>All of the questions in this quiz refer to the open source Chinook Database. Please familiarize yourself with the ER diagram in order to familiarize yourself with the table and column names in order to write accurate queries and get the appropriate answers.</p>
+<h3 id="1-Using-a-subquery-find-the-names-of-all-the-tracks-for-the-album-“Californication”"><a href="#1-Using-a-subquery-find-the-names-of-all-the-tracks-for-the-album-“Californication”" class="headerlink" title="1. Using a subquery, find the names of all the tracks for the album “Californication”."></a>1. Using a subquery, find the names of all the tracks for the album “Californication”.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">Name</span></div><div class="line"><span class="keyword">FROM</span> Tracks</div><div class="line"><span class="keyword">WHERE</span> AlbumId <span class="keyword">IN</span> (</div><div class="line"><span class="keyword">SELECT</span> AlbumId</div><div class="line"><span class="keyword">FROM</span> Albums</div><div class="line"><span class="keyword">WHERE</span> Title = <span class="string">"Californication"</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">+-------------------+</div><div class="line">| Name              |</div><div class="line">+-------------------+</div><div class="line">| Around The World  |</div><div class="line">| Parallel Universe |</div><div class="line">| Scar Tissue       |</div><div class="line">| Otherside         |</div><div class="line">| Get On Top        |</div><div class="line">| Californication   |</div><div class="line">| Easily            |</div><div class="line">| Porcelain         |</div><div class="line">| Emit Remmus       |</div><div class="line">| I Like Dirt       |</div><div class="line">+-------------------+</div><div class="line">(Output limit exceeded, 10 of 15 total rows shown)</div></pre></td></tr></table></figure>
+<h3 id="2-Find-the-total-number-of-invoices-for-each-customer-along-with-the-customer’s-full-name-city-and-email"><a href="#2-Find-the-total-number-of-invoices-for-each-customer-along-with-the-customer’s-full-name-city-and-email" class="headerlink" title="2. Find the total number of invoices for each customer along with the customer’s full name, city and email."></a>2. Find the total number of invoices for each customer along with the customer’s full name, city and email.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> Email,City,FirstName,</div><div class="line">(<span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*)</div><div class="line"><span class="keyword">FROM</span> Invoices</div><div class="line"><span class="keyword">WHERE</span> Invoices.CustomerId = Customers.CustomerId) <span class="keyword">AS</span> Numbers</div><div class="line"><span class="keyword">FROM</span> Customers;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">+--------------------------+---------------------+-----------+---------+</div><div class="line">| Email                    | City                | FirstName | Numbers |</div><div class="line">+--------------------------+---------------------+-----------+---------+</div><div class="line">| luisg@embraer.com.br     | São José dos Campos | Luís      |       7 |</div><div class="line">| leonekohler@surfeu.de    | Stuttgart           | Leonie    |       7 |</div><div class="line">| ftremblay@gmail.com      | Montréal            | François  |       7 |</div><div class="line">| bjorn.hansen@yahoo.no    | Oslo                | Bjørn     |       7 |</div><div class="line">| frantisekw@jetbrains.com | Prague              | František |       7 |</div><div class="line">| hholy@gmail.com          | Prague              | Helena    |       7 |</div><div class="line">| astrid.gruber@apple.at   | Vienne              | Astrid    |       7 |</div><div class="line">| daan_peeters@apple.be    | Brussels            | Daan      |       7 |</div><div class="line">| kara.nielsen@jubii.dk    | Copenhagen          | Kara      |       7 |</div><div class="line">| eduardo@woodstock.com.br | São Paulo           | Eduardo   |       7 |</div><div class="line">+--------------------------+---------------------+-----------+---------+</div><div class="line">(Output limit exceeded, 10 of 59 total rows shown)</div></pre></td></tr></table></figure>
+<h3 id="3-Retrieve-the-track-name-album-artist-and-trackID-for-all-the-albums"><a href="#3-Retrieve-the-track-name-album-artist-and-trackID-for-all-the-albums" class="headerlink" title="3. Retrieve the track name, album, artist, and trackID for all the albums."></a>3. Retrieve the track name, album, artist, and trackID for all the albums.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> Tracks.Name, Tracks.trackID, Albums.Title, Albums.ArtistId</div><div class="line"><span class="keyword">FROM</span> Albums</div><div class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Tracks</div><div class="line"><span class="keyword">ON</span> Albums.AlbumId = Tracks.AlbumId;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">+-----------------------------------------+---------+---------------------------------------+----------+</div><div class="line">| Name                                    | TrackId | Title                                 | ArtistId |</div><div class="line">+-----------------------------------------+---------+---------------------------------------+----------+</div><div class="line">| For Those About To Rock (We Salute You) |       1 | For Those About To Rock We Salute You |        1 |</div><div class="line">| Put The Finger On You                   |       6 | For Those About To Rock We Salute You |        1 |</div><div class="line">| Let&apos;s Get It Up                         |       7 | For Those About To Rock We Salute You |        1 |</div><div class="line">| Inject The Venom                        |       8 | For Those About To Rock We Salute You |        1 |</div><div class="line">| Snowballed                              |       9 | For Those About To Rock We Salute You |        1 |</div><div class="line">| Evil Walks                              |      10 | For Those About To Rock We Salute You |        1 |</div><div class="line">| C.O.D.                                  |      11 | For Those About To Rock We Salute You |        1 |</div><div class="line">| Breaking The Rules                      |      12 | For Those About To Rock We Salute You |        1 |</div><div class="line">| Night Of The Long Knives                |      13 | For Those About To Rock We Salute You |        1 |</div><div class="line">| Spellbound                              |      14 | For Those About To Rock We Salute You |        1 |</div><div class="line">+-----------------------------------------+---------+---------------------------------------+----------+</div><div class="line">(Output limit exceeded, 10 of 3503 total rows shown)</div></pre></td></tr></table></figure>
+<h3 id="4-Retrieve-a-list-with-the-managers-last-name-and-the-last-name-of-the-employees-who-report-to-him-or-her"><a href="#4-Retrieve-a-list-with-the-managers-last-name-and-the-last-name-of-the-employees-who-report-to-him-or-her" class="headerlink" title="4. Retrieve a list with the managers last name, and the last name of the employees who report to him or her."></a>4. Retrieve a list with the managers last name, and the last name of the employees who report to him or her.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> e1.LastName <span class="keyword">AS</span> manager</div><div class="line">, e2.LastName <span class="keyword">AS</span> employee</div><div class="line"><span class="keyword">FROM</span> Employees e1, Employees e2</div><div class="line"><span class="keyword">WHERE</span> e1.EmployeeId = e2.ReportsTo;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">+----------+----------+</div><div class="line">| manager  | employee |</div><div class="line">+----------+----------+</div><div class="line">| Adams    | Edwards  |</div><div class="line">| Adams    | Mitchell |</div><div class="line">| Edwards  | Peacock  |</div><div class="line">| Edwards  | Park     |</div><div class="line">| Edwards  | Johnson  |</div><div class="line">| Mitchell | King     |</div><div class="line">| Mitchell | Callahan |</div><div class="line">+----------+----------+</div></pre></td></tr></table></figure>
+<h3 id="5-Find-the-name-and-ID-of-the-artists-who-do-not-have-albums"><a href="#5-Find-the-name-and-ID-of-the-artists-who-do-not-have-albums" class="headerlink" title="5. Find the name and ID of the artists who do not have albums."></a>5. Find the name and ID of the artists who do not have albums.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> Artists.Name, Artists.ArtistId</div><div class="line"><span class="keyword">FROM</span> Artists</div><div class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Albums</div><div class="line"><span class="keyword">ON</span> Artists.ArtistId = Albums.ArtistId</div><div class="line"><span class="keyword">WHERE</span> Albums.AlbumId <span class="keyword">IS</span> <span class="literal">NULL</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">+----------------------------+----------+</div><div class="line">| Name                       | ArtistId |</div><div class="line">+----------------------------+----------+</div><div class="line">| Milton Nascimento &amp; Bebeto |       25 |</div><div class="line">| Azymuth                    |       26 |</div><div class="line">| João Gilberto              |       28 |</div><div class="line">| Bebel Gilberto             |       29 |</div><div class="line">| Jorge Vercilo              |       30 |</div><div class="line">| Baby Consuelo              |       31 |</div><div class="line">| Ney Matogrosso             |       32 |</div><div class="line">| Luiz Melodia               |       33 |</div><div class="line">| Nando Reis                 |       34 |</div><div class="line">| Pedro Luís &amp; A Parede      |       35 |</div><div class="line">+----------------------------+----------+</div><div class="line">(Output limit exceeded, 10 of 71 total rows shown)</div></pre></td></tr></table></figure>
+<h3 id="6-Use-a-UNION-to-create-a-list-of-all-the-employee’s-amp-customer’s-first-names-and-last-names-ordered-by-the-last-name-in-descending-order"><a href="#6-Use-a-UNION-to-create-a-list-of-all-the-employee’s-amp-customer’s-first-names-and-last-names-ordered-by-the-last-name-in-descending-order" class="headerlink" title="6. Use a UNION to create a list of all the employee’s &amp; customer’s first names and last names ordered by the last name in descending order."></a>6. Use a UNION to create a list of all the employee’s &amp; customer’s first names and last names ordered by the last name in descending order.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> FirstName,LastName</div><div class="line"><span class="keyword">FROM</span> Employees</div><div class="line"><span class="keyword">UNION</span></div><div class="line"><span class="keyword">SELECT</span> FirstName,LastName</div><div class="line"><span class="keyword">FROM</span> Customers</div><div class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> LastName <span class="keyword">DESC</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">+-----------+--------------+</div><div class="line">| FirstName | LastName     |</div><div class="line">+-----------+--------------+</div><div class="line">| Fynn      | Zimmermann   |</div><div class="line">| Stanisław | Wójcik       |</div><div class="line">| František | Wichterlová  |</div><div class="line">| Johannes  | Van der Berg |</div><div class="line">| François  | Tremblay     |</div><div class="line">| Mark      | Taylor       |</div><div class="line">| Ellie     | Sullivan     |</div><div class="line">| Victor    | Stevens      |</div><div class="line">| Puja      | Srivastava   |</div><div class="line">| Jack      | Smith        |</div><div class="line">+-----------+--------------+</div><div class="line">(Output limit exceeded, 10 of 67 total rows shown)</div></pre></td></tr></table></figure>
+<h3 id="7-See-if-there-are-any-customers-who-have-a-different-city-listed-in-their-billing-city-versus-their-customer-city"><a href="#7-See-if-there-are-any-customers-who-have-a-different-city-listed-in-their-billing-city-versus-their-customer-city" class="headerlink" title="7. See if there are any customers who have a different city listed in their billing city versus their customer city."></a>7. See if there are any customers who have a different city listed in their billing city versus their customer city.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*)</div><div class="line"><span class="keyword">FROM</span> Customers</div><div class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Invoices</div><div class="line"><span class="keyword">ON</span> Customers.CustomerId = Invoices.CustomerId</div><div class="line"><span class="keyword">WHERE</span> Customers.City &lt;&gt; Invoices.BillingCity;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">+----------+</div><div class="line">| COUNT(*) |</div><div class="line">+----------+</div><div class="line">|        0 |</div><div class="line">+----------+</div></pre></td></tr></table></figure>
 
       
 
@@ -701,6 +828,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/03/12/Javascript-Getting-started/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JavaScript_Getting started
+        
+      </div>
+    </a>
   
   
     <a href="/2018/01/25/Notes-for-HFT/" id="article-nav-older" class="article-nav-link-wrap">
@@ -847,11 +983,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HFT</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HFT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -863,11 +1007,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color5">SODA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SODA</a>
+                <a href="javascript:void(0)" class="js-tag color3">hotkeys</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -876,10 +1020,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">hackerrank</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">hotkeys</a>
               </li>
             
             <div class="clearfix"></div>
