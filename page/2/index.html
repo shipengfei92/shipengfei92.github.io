@@ -175,6 +175,277 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-notes-for-hotkeys" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/09/notes-for-hotkeys/">notes for hotkeys</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/09/notes-for-hotkeys/" class="archive-article-date">
+  	<time datetime="2017-06-09T06:51:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><p>批量注释和解注释:<code>control+/</code></p>
+<p>批量缩进: <code>tab</code> and <code>tab+shift</code></p>
+<h2 id="Matlab"><a href="#Matlab" class="headerlink" title="Matlab"></a>Matlab</h2><h2 id="Tex-studio"><a href="#Tex-studio" class="headerlink" title="Tex studio"></a>Tex studio</h2><p>批量注释和解注释:<code>command+T</code> + <code>command+U</code></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">hotkeys</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/09/notes-for-hotkeys/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Keras-switch-backend" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/07/Keras-switch-backend/">Keras-switch-backend</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/07/Keras-switch-backend/" class="archive-article-date">
+  	<time datetime="2017-06-07T10:35:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Switching-from-one-backend-to-another"><a href="#Switching-from-one-backend-to-another" class="headerlink" title="Switching from one backend to another"></a>Switching from one backend to another</h1><p>If you have run Keras at least once, you will find the Keras configuration file at:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$HOME/.keras/keras.json</div></pre></td></tr></table></figure>
+<p>If it isn’t there, you can create it.</p>
+<p>NOTE for Windows Users: Please change $HOME with %USERPROFILE%.</p>
+<p>The default configuration file looks like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">&quot;image_data_format&quot;: &quot;channels_last&quot;,</div><div class="line">&quot;epsilon&quot;: 1e-07,</div><div class="line">&quot;floatx&quot;: &quot;float32&quot;,</div><div class="line">&quot;backend&quot;: &quot;tensorflow&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Simply change the field backend to either “theano” or “tensorflow”, and Keras will use the new configuration next time you run any Keras code.</p>
+<p>You can also define the environment variable KERAS_BACKEND and this will override what is defined in your config file :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">KERAS_BACKEND=tensorflow python -c &quot;from keras import backend&quot;</div><div class="line">Using TensorFlow backend.</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/07/Keras-switch-backend/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Some-Basic-knowledge-for-programming" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/08/Some-Basic-knowledge-for-programming/">Some Basic knowledge for programming </a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/08/Some-Basic-knowledge-for-programming/" class="archive-article-date">
+  	<time datetime="2017-04-08T02:02:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="virtual-function"><a href="#virtual-function" class="headerlink" title="virtual function"></a>virtual function</h2><p>在某基类中声明为 virtual 并在一个或多个派生类中被重新定义的成员函数，用法格式为：virtual 函数返回类型 函数名（参数表） {函数体}；实现多态性，通过指向派生类的基类指针或引用，访问派生类中同名覆盖成员函数</p>
+<h2 id="multiple-thread"><a href="#multiple-thread" class="headerlink" title="multiple thread"></a>multiple thread</h2><h2 id="deadlock-and-starvation"><a href="#deadlock-and-starvation" class="headerlink" title="deadlock and starvation"></a>deadlock and starvation</h2><h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><p>UDP is Connectionless Protocal</p>
+<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p>To establish a connection, TCP uses a three-way handshake. Before a client attempts to connect with a server, the server must first bind to and listen at a port to open it up for connections: this is called a passive open. Once the passive open is established, a client may initiate an active open. To establish a connection, the three-way (or 3-step) handshake occurs:</p>
+<p>SYN: The active open is performed by the client sending a SYN to the server. The client sets the segment’s sequence number to a random value A.<br>SYN-ACK: In response, the server replies with a SYN-ACK. The acknowledgment number is set to one more than the received sequence number i.e. A+1, and the sequence number that the server chooses for the packet is another random number, B.<br>ACK: Finally, the client sends an ACK back to the server. The sequence number is set to the received acknowledgement value i.e. A+1, and the acknowledgement number is set to one more than the received sequence number i.e. B+1.<br>At this point, both the client and server have received an acknowledgment of the connection. The steps 1, 2 establish the connection parameter (sequence number) for one direction and it is acknowledged. The steps 2, 3 establish the connection parameter (sequence number) for the other direction and it is acknowledged. With these, a full-duplex communication is established.</p>
+<h2 id="some-tricks"><a href="#some-tricks" class="headerlink" title="some tricks"></a>some tricks</h2><ul>
+<li>What is the difference between using <code>++i</code> and <code>i++</code>? </li>
+</ul>
+<p><code>++i</code> will increment the value of i, and then return the incremented value.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> i = 1;</div><div class="line"> j = ++i;</div><div class="line">(i is 2, j is 2)</div></pre></td></tr></table></figure>
+<p><code>i++</code> will increment the value of i, but return the original value that i held before being incremented.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">i = 1;</div><div class="line">j = i++;</div><div class="line">(i is 2, j is 1)</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/08/Some-Basic-knowledge-for-programming/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Leetcode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/07/Leetcode/">Leetcode</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/07/Leetcode/" class="archive-article-date">
+  	<time datetime="2017-04-07T11:17:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Minimum-Depth-of-Binary-Tree"><a href="#Minimum-Depth-of-Binary-Tree" class="headerlink" title="Minimum Depth of Binary Tree"></a>Minimum Depth of Binary Tree</h2><p>Given a binary tree, find its minimum depth.The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
+<p>java:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for binary tree</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">run</span><span class="params">(TreeNode root)</span> </span>&#123;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (root.left == <span class="keyword">null</span>)&#123;</div><div class="line">            <span class="keyword">return</span> run(root.right) + <span class="number">1</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (root.right == <span class="keyword">null</span>)&#123;</div><div class="line">            <span class="keyword">return</span> run(root.left) + <span class="number">1</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> Math.min(run(root.left), run(root.right))+<span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>c++</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">run</span><span class="params">(TreeNode *root)</span> </span>&#123;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span>(root == <span class="literal">nullptr</span>) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (root-&gt;left == <span class="literal">nullptr</span> )&#123;</div><div class="line">            </div><div class="line">            <span class="keyword">return</span> run(root -&gt;right) + <span class="number">1</span>;</div><div class="line">            </div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (root-&gt; right == <span class="literal">nullptr</span>)&#123;</div><div class="line">            <span class="keyword">return</span> run(root -&gt;left) +<span class="number">1</span>;</div><div class="line">        &#125; <span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="number">1</span> + min(run(root-&gt;left),run(root-&gt;right));</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="Reverse-Polish-Notation"><a href="#Reverse-Polish-Notation" class="headerlink" title="Reverse Polish Notation"></a>Reverse Polish Notation</h2><p>Evaluate the value of an arithmetic expression in Reverse Polish Notation.<br>Valid operators are<code>+,-,*,/</code>. Each operand may be an integer or another expression.<br>Some examples:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[&quot;2&quot;, &quot;1&quot;, &quot;+&quot;, &quot;3&quot;, &quot;*&quot;] -&gt; ((2 + 1) * 3) -&gt; 9</div><div class="line">[&quot;4&quot;, &quot;13&quot;, &quot;5&quot;, &quot;/&quot;, &quot;+&quot;] -&gt; (4 + (13 / 5)) -&gt; 6</div></pre></td></tr></table></figure>
+<h2 id="max-points-on-a-line"><a href="#max-points-on-a-line" class="headerlink" title="max-points-on-a-line"></a>max-points-on-a-line</h2><p>Given n points on a 2D plane, find the maximum number of points that lie on the same straight line.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"> </div><div class="line"> </div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"> </div><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for a point.</div><div class="line"> * struct Point &#123;</div><div class="line"> *     int x;</div><div class="line"> *     int y;</div><div class="line"> *     Point() : x(0), y(0) &#123;&#125;</div><div class="line"> *     Point(int a, int b) : x(a), y(b) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">     </div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxPoints</span><span class="params">(<span class="built_in">vector</span>&lt;Point&gt; &amp;points)</span> </span>&#123;</div><div class="line">         </div><div class="line">        <span class="keyword">int</span> size = points.size();</div><div class="line">         </div><div class="line">        <span class="keyword">if</span>( size == <span class="number">0</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (size == <span class="number">1</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">             </div><div class="line">            <span class="keyword">int</span> result = <span class="number">0</span>;</div><div class="line">             </div><div class="line">             </div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i)&#123;</div><div class="line">                <span class="keyword">int</span> curmax = <span class="number">1</span>;</div><div class="line">                <span class="keyword">int</span> same = <span class="number">0</span>;</div><div class="line">                <span class="keyword">int</span> verticle = <span class="number">1</span>;</div><div class="line">                 </div><div class="line">                <span class="built_in">map</span> &lt; <span class="keyword">double</span>, <span class="keyword">int</span> &gt; m;</div><div class="line">                 </div><div class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; size; ++j)&#123;</div><div class="line">                     </div><div class="line">                    <span class="keyword">if</span>(i == j) <span class="keyword">continue</span>;</div><div class="line">                     </div><div class="line">                    <span class="keyword">int</span> dx = points[i].x - points[j].x;</div><div class="line">                    <span class="keyword">int</span> dy = points[i].y - points[j].y;</div><div class="line">                     </div><div class="line">                </div><div class="line">                    <span class="keyword">if</span>(dx == <span class="number">0</span>)&#123;</div><div class="line">                       <span class="keyword">if</span> (dy == <span class="number">0</span>) &#123;same ++;&#125;</div><div class="line">                       <span class="keyword">else</span>&#123;</div><div class="line">                           verticle ++;</div><div class="line">                           curmax = max( curmax, verticle);</div><div class="line">                       &#125;</div><div class="line">                        </div><div class="line">                          </div><div class="line">                    &#125;<span class="keyword">else</span>&#123;</div><div class="line">                        <span class="keyword">double</span> k = (<span class="number">1.0</span>*dy)/dx;</div><div class="line">                        <span class="keyword">if</span>(m[k] == <span class="number">0</span>)&#123;</div><div class="line">                            m[k] = <span class="number">2</span>;</div><div class="line">                        &#125;<span class="keyword">else</span>&#123;</div><div class="line">                            ++m[k];</div><div class="line">                        &#125;</div><div class="line">                        curmax = max(m[k],curmax);</div><div class="line">                         </div><div class="line">                    &#125;</div><div class="line">                     </div><div class="line">                &#125;</div><div class="line">                result = max(result, curmax + same);</div><div class="line">                 </div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> result;</div><div class="line">        &#125;</div><div class="line">                 </div><div class="line">         </div><div class="line">         </div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="sort-list"><a href="#sort-list" class="headerlink" title="sort-list"></a>sort-list</h2><p>Sort a linked list in O(n log n) time using constant space complexity.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * struct ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode *next;</div><div class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    </div><div class="line">    <span class="function">ListNode *<span class="title">merge</span><span class="params">(ListNode * left, ListNode * right)</span></span>&#123;</div><div class="line">        <span class="function">ListNode <span class="title">tmp</span><span class="params">(<span class="number">0</span>)</span></span>;</div><div class="line">        ListNode *p = &amp;tmp;</div><div class="line">        </div><div class="line">        <span class="keyword">while</span> (left &amp;&amp; right)&#123;</div><div class="line">            <span class="keyword">if</span> (left -&gt; val &lt; right -&gt; val)&#123;</div><div class="line">                p -&gt; next = left;</div><div class="line">                left = left -&gt; next;</div><div class="line">            &#125; <span class="keyword">else</span>&#123;</div><div class="line">                p -&gt; next = right;</div><div class="line">                right = right -&gt; next;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">            p = p -&gt;next;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span>(left)&#123;</div><div class="line">            p -&gt; next = left;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span>(right)&#123;</div><div class="line">            p -&gt; next = right;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        </div><div class="line">        </div><div class="line">        <span class="keyword">return</span> tmp.next;</div><div class="line">        </div><div class="line">        </div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function">ListNode *<span class="title">sortList</span><span class="params">(ListNode *head)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(!head || !head-&gt;next)&#123;</div><div class="line">            <span class="keyword">return</span> head;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        ListNode *p = head, *q = head-&gt;next;</div><div class="line">        </div><div class="line">        <span class="keyword">while</span>(q &amp;&amp; q-&gt;next)&#123;</div><div class="line">            p = p-&gt;next;</div><div class="line">            q = q-&gt;next-&gt;next;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        ListNode * right = sortList( p -&gt;next);</div><div class="line">        p -&gt;next = <span class="literal">NULL</span>;</div><div class="line">        ListNode * left = sortList(head);</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> merge(left, right);</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="two-sum"><a href="#two-sum" class="headerlink" title="two-sum"></a>two-sum</h2><p>Given an array of integers, find two numbers such that they add up to a specific target number.<br>The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.<br>You may assume that each input would have exactly one solution.<br>Input: numbers={2, 7, 11, 15}, target=9<br>Output: index1=1, index2=2</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;numbers, <span class="keyword">int</span> target) &#123;</div><div class="line">        <span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt; ans;</div><div class="line">        <span class="keyword">int</span> index1 = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> index2 = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numbers.size() - <span class="number">1</span>; ++i)&#123;</div><div class="line">            <span class="keyword">int</span> tmp = target - numbers[i];</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt;numbers.size(); ++j )&#123;</div><div class="line">                <span class="keyword">if</span> (tmp == numbers[j])&#123;</div><div class="line">                    ans.push_back(i+<span class="number">1</span>);</div><div class="line">                    ans.push_back(j+<span class="number">1</span>);</div><div class="line">                    </div><div class="line">                    </div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> ans;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="using-hash-unordered-map"><a href="#using-hash-unordered-map" class="headerlink" title="using hash unordered_map"></a>using hash unordered_map</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unordered_map&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;numbers, <span class="keyword">int</span> target) &#123;</div><div class="line">        </div><div class="line">        <span class="built_in">unordered_map</span> &lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; hash;</div><div class="line">        <span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt; res;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numbers.size(); ++i)&#123;</div><div class="line">            hash[numbers[i]] = i;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numbers.size(); ++i)&#123;</div><div class="line">            <span class="keyword">int</span> tmp = target - numbers[i];</div><div class="line">            <span class="keyword">if</span>(hash.find(tmp)!= hash.end() &amp;&amp; hash[tmp] &gt; i)&#123;</div><div class="line">                res.push_back(i+<span class="number">1</span>);</div><div class="line">                res.push_back(hash[tmp] + <span class="number">1</span>);</div><div class="line">                </div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">        <span class="comment">/*</span></div><div class="line">        vector &lt;int&gt; ans;</div><div class="line">        int index1 = 0;</div><div class="line">        int index2 = 0;</div><div class="line">        for (int i = 0; i &lt; numbers.size() - 1; ++i)&#123;</div><div class="line">            int tmp = target - numbers[i];</div><div class="line">            for(int j = i+1; j &lt;numbers.size(); ++j )&#123;</div><div class="line">                if (tmp == numbers[j])&#123;</div><div class="line">                    ans.push_back(i+1);</div><div class="line">                    ans.push_back(j+1);</div><div class="line">                    </div><div class="line">                    </div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return ans;*/</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="balanced-binary-tree"><a href="#balanced-binary-tree" class="headerlink" title="balanced-binary-tree"></a>balanced-binary-tree</h2><p>Given a binary tree, determine if it is height-balanced.<br>For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for binary tree</div><div class="line"> * struct TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode *left;</div><div class="line"> *     TreeNode *right;</div><div class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getDepth</span><span class="params">(TreeNode * root)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span> (root -&gt; left == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="number">1</span> + getDepth(root -&gt;right);</div><div class="line">        <span class="keyword">if</span> (root -&gt; right == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="number">1</span> + getDepth(root -&gt;left);</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span> + max(getDepth(root-&gt; left), getDepth(root-&gt; right));</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isBalanced</span><span class="params">(TreeNode *root)</span> </span>&#123;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">        </div><div class="line">        </div><div class="line">        <span class="keyword">int</span> left = getDepth(root -&gt; left);</div><div class="line">        <span class="keyword">int</span> right = getDepth(root -&gt; right);</div><div class="line">        </div><div class="line">        <span class="keyword">if</span> (<span class="built_in">abs</span>(left - right) &gt; <span class="number">1</span> ) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> (isBalanced(root -&gt; left) &amp;&amp; isBalanced(root -&gt; right));</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="binary-preorder-traversal"><a href="#binary-preorder-traversal" class="headerlink" title="binary-preorder-traversal"></a>binary-preorder-traversal</h2><p>Given a binary tree, return the preorder traversal of its nodes’ values.<br>For example:<br>Given binary tree<code>{1,#,2,3}</code>,</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span></div><div class="line"> \</div><div class="line">  <span class="number">2</span></div><div class="line"> /</div><div class="line"><span class="number">3</span></div></pre></td></tr></table></figure>
+<p>return<code>[1,2,3]</code>.<br>Note: Recursive solution is trivial, could you do it iteratively?</p>
+<p>###Recursive</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for binary tree</div><div class="line"> * struct TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode *left;</div><div class="line"> *     TreeNode *right;</div><div class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; preorderTraversal(TreeNode *root) &#123;</div><div class="line">        <span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt; result;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> result;</div><div class="line">        </div><div class="line">        helper(root,result);</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(TreeNode * root, <span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt; &amp;vec)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span>;</div><div class="line">        vec.push_back(root -&gt; val);</div><div class="line">        helper(root -&gt; left, vec);</div><div class="line">        helper(root -&gt; right, vec);</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="iterative"><a href="#iterative" class="headerlink" title="iterative"></a>iterative</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for binary tree</div><div class="line"> * struct TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode *left;</div><div class="line"> *     TreeNode *right;</div><div class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; preorderTraversal(TreeNode *root) &#123;</div><div class="line">        <span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt; result;</div><div class="line">        <span class="built_in">stack</span> &lt;TreeNode *&gt; st;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> result;</div><div class="line">        </div><div class="line">        st.push(root);</div><div class="line">        </div><div class="line">        <span class="keyword">while</span>(!st.empty())&#123;</div><div class="line">            TreeNode * current = st.top();</div><div class="line">            st.pop();</div><div class="line">            </div><div class="line">            <span class="keyword">if</span> (current -&gt; right != <span class="literal">NULL</span>) st.push(current-&gt;right);</div><div class="line">            <span class="keyword">if</span> (current -&gt; left != <span class="literal">NULL</span>) st.push(current-&gt;left);</div><div class="line">            result.push_back(current -&gt; val);</div><div class="line">            </div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        </div><div class="line">        </div><div class="line">        </div><div class="line">        <span class="comment">//helper(root,result);</span></div><div class="line">        </div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line"><span class="keyword">private</span>:</div><div class="line">    </div><div class="line">    </div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(TreeNode * root, <span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt; &amp;vec)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span>;</div><div class="line">        vec.push_back(root -&gt; val);</div><div class="line">        helper(root -&gt; left, vec);</div><div class="line">        helper(root -&gt; right, vec);</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="string-to-integer-atoi"><a href="#string-to-integer-atoi" class="headerlink" title="string to integer atoi"></a>string to integer atoi</h2><p>Implement atoi to convert a string to an integer.<br>Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below and ask yourself what are the possible input cases.<br>Notes: It is intended for this problem to be specified vaguely (ie, no given input specs). You are responsible to gather all the input requirements up front.<br>spoilers alert… click to show requirements for atoi.<br>Requirements for atoi:<br>The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.<br>The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.<br>If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.<br>If no valid conversion could be performed, a zero value is returned. If the correct value is out of the range of representable values, INT_MAX (2147483647) or INT_MIN (-2147483648) is returned.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">atoi</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *str)</span> </span>&#123;</div><div class="line">        <span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span> (str == <span class="literal">NULL</span>)&#123;</div><div class="line">            <span class="keyword">return</span> res;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">int</span> len = <span class="built_in">strlen</span>(str);</div><div class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">        <span class="keyword">bool</span> neg = <span class="literal">false</span>;</div><div class="line">        </div><div class="line">        <span class="keyword">while</span> (str[i] == <span class="string">' '</span>|| str[i] == <span class="string">'0'</span>)&#123;</div><div class="line">            ++i;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span> (str[i] == <span class="string">'-'</span>)&#123;</div><div class="line">            </div><div class="line">            neg = <span class="literal">true</span>;</div><div class="line">            ++i;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (str[i] == <span class="string">'+'</span>)&#123;</div><div class="line">            neg = <span class="literal">false</span>;</div><div class="line">            ++i;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (;i &lt; len;++i)&#123;</div><div class="line">            <span class="keyword">char</span> ch = str[i];</div><div class="line">            <span class="keyword">if</span> (ch &gt;=<span class="string">'0'</span> &amp;&amp; ch &lt;=<span class="string">'9'</span>)&#123;</div><div class="line">                res = res*<span class="number">10</span> + ch - <span class="string">'0'</span>;</div><div class="line">                </div><div class="line">                <span class="keyword">if</span> (res &gt; INT_MAX)&#123;</div><div class="line">                    <span class="keyword">return</span> neg? INT_MIN:INT_MAX;</div><div class="line">                &#125;</div><div class="line">                </div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                <span class="keyword">if</span> (neg) <span class="keyword">return</span> -res;</div><div class="line">        		<span class="keyword">return</span> res;   </div><div class="line">            &#125;</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span> (neg) <span class="keyword">return</span> -res;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="merge-two-sorted-lists"><a href="#merge-two-sorted-lists" class="headerlink" title="merge two sorted lists"></a>merge two sorted lists</h2><p>Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * struct ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode *next;</div><div class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function">ListNode *<span class="title">mergeTwoLists</span><span class="params">(ListNode *l1, ListNode *l2)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (l1 == <span class="literal">NULL</span>) <span class="keyword">return</span> l2;</div><div class="line">        <span class="keyword">if</span> (l2 == <span class="literal">NULL</span>) <span class="keyword">return</span> l1;</div><div class="line">        </div><div class="line">        ListNode * dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</div><div class="line">        ListNode * p = dummy;</div><div class="line">        </div><div class="line">        <span class="keyword">while</span>(l1!=<span class="literal">NULL</span> &amp;&amp; l2!=<span class="literal">NULL</span>)&#123;</div><div class="line">            <span class="keyword">if</span> (l1-&gt;val &lt; l2-&gt;val)&#123;</div><div class="line">                p-&gt;next = l1;</div><div class="line">                l1 = l1-&gt;next;</div><div class="line">            &#125;<span class="keyword">else</span> &#123;</div><div class="line">                p -&gt; next = l2;</div><div class="line">                l2 = l2 -&gt; next;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">            p = p -&gt;next;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span>(l1!= <span class="literal">NULL</span>)&#123;</div><div class="line">            p -&gt; next = l1;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(l2!= <span class="literal">NULL</span>)&#123;</div><div class="line">            p -&gt; next = l2;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> dummy -&gt; next;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>##</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/07/Leetcode/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Using-HEXO-to-write-blogs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -701,7 +972,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Pengfei Shi
+    		&copy; 2019 Pengfei Shi
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -801,19 +1072,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HFT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -821,7 +1084,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SODA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-High-frequency Trading</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HFT</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -830,14 +1109,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">hotkeys</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SODA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Blog</a>
               </li>
             
             <div class="clearfix"></div>
